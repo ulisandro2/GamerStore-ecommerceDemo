@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import ItemList from '../Componets/ItemList'
+
 
 // const task = new Promise((resolve,reject) => {
 //        let condicion = true
@@ -11,12 +13,19 @@ import React, { useEffect, useState } from 'react'
 
 
 
-const producto = [
+const Listproducto = [
       { 
          id: '1',  
          nombre: 'Teclado', 
          description: 'teclado gamer', 
          stock: 40
+},
+
+{ 
+    id: '2',  
+    nombre: 'Mouse', 
+    description: 'mouse gamer', 
+    stock: 30
 }
 ]
 
@@ -39,44 +48,16 @@ const getFetch = () =>{
         .then((resp) =>{
             setProductos(resp)
         })
-        .catch(err => console.log(err))
+        .catch((err) => console.log(err))
         .finally(() => setLoading(false))
     },[])
-
-    
-
-    return(
+      return(
         <div>
-            { 
-             loading ? 
-                <h1>Cargando</h1>
-             :
-            producto.map(producto => 
-                     
-                       <div className='col-md-4 p-1'
-                        key={producto.id}
-                       >
-                           <div className='card w-100 mt-5'>
-                               <div className='card-header'>
-                                   {`${producto.nombre} - ${producto.description}`}
-                               </div>
-                               <div className='card-body'>
-                                   {producto.stock}
-                               </div>
-                               <div className='card-footer'>
-                                   <button className='btn btn-outline-primary btn-block'>
-                                       Detalle del producto
-                                   </button>
-                               </div>
-                           </div>
-                       </div>
-                
-                ) }
+            { loading ? <h1>Cargando</h1>: <ItemList producto={producto}/> }
 
-
-        </div>
-    )
-}
+       </div>
+       )
+    }
 
 
 
