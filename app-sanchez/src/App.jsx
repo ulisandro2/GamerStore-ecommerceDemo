@@ -5,6 +5,7 @@ import ItemCount from './Componets/ItemCount'
 import ItemListContainer from './Containers/ItemListContainer'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Item from './Componets/Item';
+import ItemDetailContainer from './Containers/ItemDetailContainers/ItemDetailContainer';
 
 
 function App() {
@@ -14,8 +15,8 @@ function App() {
           <NavBar menu={"GamerStore"}/>
           <ItemCount stock={10} initial={1} />
           <ItemListContainer />
-          
-          <Item />
+          <ItemDetailContainer/>
+        
 
           
     </div>

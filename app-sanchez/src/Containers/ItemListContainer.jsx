@@ -33,7 +33,7 @@ const getFetch = () =>{
     
     return new Promise((resolve,reject) =>{
         setTimeout(() =>{
-            resolve(producto)
+            resolve(Listproducto)
         },3000)
         
     })
