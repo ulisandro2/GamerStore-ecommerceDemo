@@ -1,5 +1,6 @@
 import React from 'react'
 import { BsCartFill } from "react-icons/bs";
+import { Link } from 'react-router-dom';
 import './StyleNavbar.css'
 
 const NavBar = ({menu}) => {
@@ -9,10 +10,19 @@ const NavBar = ({menu}) => {
         <main className='menu' >
            <h1 className='titulo'>{menu}</h1>
            <ul className='botones'>
-             <li className='item'>Inicio</li>
+           
+        <Link to='/'><li className='item'>Inicio</li></Link> 
              <li className='item'>Productos</li>
              <li className='item'>Arma tu pc</li>
+            <button>
+              <Link to='cart'>
+              Cart
+              </Link>
+
+            </button>
+
            </ul>
+           
         </main>
        
     </div>
