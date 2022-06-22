@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
- const ItemCount = ({stock, initial})=> {
+ const ItemCount = ({stock, initial, onAdd})=> {
      const [count , setCount ]= useState(1);
 
  const Agregar = () => {
@@ -11,7 +11,9 @@ import React, { useState } from "react";
    if(count>initial)setCount(count - 1);
 }
 
-
+const AgregarProducto = ()=>{
+   onAdd(count)
+}
 
 return(
     <>
@@ -19,6 +21,7 @@ return(
             <h2>Total productos = {count}</h2>
             <button onClick={Agregar}>+</button>
             <button onClick={Restar}>-</button>
+            <button onClick={AgregarProducto} className='btn btn-success w-30'>Agregar</button>
        </div>
     
     

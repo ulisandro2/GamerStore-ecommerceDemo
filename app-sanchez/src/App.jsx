@@ -16,11 +16,12 @@ function App() {
              <NavBar menu={"GamerStore"}/>
             <Routes>
              <Route path='/' element={<ItemListContainer />} />
+             <Route path='/category/:id' element={<ItemListContainer/>}/>
              <Route path='/detalle/:id' element={<ItemDetailContainer/>} />
              <Route path='/cart' element={<Cart/>} />
                <Route path='*' element={<Navigate to='/' />} />
              </Routes>
-             <ItemCount stock={10} initial={1} />
+             {/* <ItemCount stock={10} initial={1} /> */}
           </BrowserRouter>
         
 

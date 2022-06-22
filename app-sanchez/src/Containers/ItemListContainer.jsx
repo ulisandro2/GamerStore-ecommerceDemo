@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import ItemList from '../Componets/ItemList'
 
 
@@ -18,6 +19,7 @@ const Listproducto = [
          id: '1',  
          nombre: 'Teclado', 
          description: 'teclado gamer', 
+         categoria:'pc',
          stock: 40
 },
 
@@ -25,6 +27,7 @@ const Listproducto = [
     id: '2',  
     nombre: 'Mouse', 
     description: 'mouse gamer', 
+    categoria:'gamer',
     stock: 30
 }
 ]
@@ -40,17 +43,22 @@ const getFetch = () =>{
 }
 
  const ItemListContainer = () => {
-    const [producto, setProductos] = useState([])
-    const [loading , setLoading] = useState(true)
+    const [producto, setProductos] = useState([]);
+    const [loading , setLoading] = useState(true);
     
+   const {id} = useParams();
+
+
     useEffect(() => {
         getFetch()
         .then((resp) =>{
-            setProductos(resp)
+            setProductos(
+          id ? resp.filter((producto) => producto.categoria == id) : resp );
+            
         })
         .catch((err) => console.log(err))
         .finally(() => setLoading(false))
-    },[])
+    },[id])
       return(
         <div>
             { loading ? <h1>Cargando</h1>: <ItemList producto={producto}/> }
