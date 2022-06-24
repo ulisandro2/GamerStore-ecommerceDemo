@@ -1,6 +1,6 @@
 const Listproducto = [
     { 
-       id: '1',  
+       id: 1,  
        nombre: 'Teclado', 
        description: 'teclado gamer', 
        stock: 40,
@@ -9,7 +9,7 @@ const Listproducto = [
 
 
 { 
-  id: '2',  
+  id: 2,  
   nombre: 'Mouse', 
   description: 'mouse gamer', 
   stock: 30

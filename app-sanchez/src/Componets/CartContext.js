@@ -20,8 +20,12 @@ const CartContextProvider = ({children}) => {
     return cartList&&cartList.some((i)=> i.producto.id === id)
   }
 
+  const EmptyCart = () =>{
+    setCartList([])
+  }
+
     return(
-        <CartContext.Provider value={{AddToCart ,cartList}}>
+        <CartContext.Provider value={{AddToCart ,cartList,EmptyCart}}>
             {children}
         </CartContext.Provider>
     )

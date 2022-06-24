@@ -4,9 +4,10 @@ import CartItem from './CartItem'
 
 const Cart = () => {
 
-  const {cartList} = useContext(CartContext)
+  const {cartList , EmptyCart} = useContext(CartContext)
 
   return (
+    <>
     <div>
          {cartList.length < 1 ? (<p>Carrito vacio</p> )
          
@@ -15,7 +16,10 @@ const Cart = () => {
          
          )}
     </div>
+    <button onClick={EmptyCart}>Borrar carrito</button>
+    </>
   )
+  
 }
       
 export default Cart

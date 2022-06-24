@@ -8,7 +8,8 @@ import { getFetchOne } from '../../helpers/getFetch'
 
 const ItemDetailContainer = () => {
     const [producto , setProductos] = useState({});
-    const id= 1 ;
+    
+     const id= 1
     const {} = useParams()
 
        useEffect(() =>{

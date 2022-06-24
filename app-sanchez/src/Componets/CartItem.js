@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CartItem = (producto) => {
+const CartItem = ({producto}) => {
 
      
   return (
