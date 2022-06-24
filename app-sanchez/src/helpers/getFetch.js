@@ -3,8 +3,10 @@ const Listproducto = [
        id: '1',  
        nombre: 'Teclado', 
        description: 'teclado gamer', 
-       stock: 40
+       stock: 40,
+       
 },
+
 
 { 
   id: '2',  

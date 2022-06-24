@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState , useContext} from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from '../Componets/ItemList'
+import { CartContext } from '../Componets/CartContext'
 
 
 // const task = new Promise((resolve,reject) => {
@@ -20,7 +21,8 @@ const Listproducto = [
          nombre: 'Teclado', 
          description: 'teclado gamer', 
          categoria:'pc',
-         stock: 40
+         stock: 40,
+         foto:'./imagenes/auriculares.png'
 },
 
 { 

@@ -11,6 +11,7 @@ const Item = ({producto}) => {
                                    {`${producto.nombre} - ${producto.description}`}
                                </div>
                                <div className='card-body'>
+                                   {producto.foto}
                                    {producto.stock}
                                </div>
                                <div className='card-footer'>

@@ -7,11 +7,13 @@ import ItemListContainer from './Containers/ItemListContainer'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetailContainer from './Containers/ItemDetailContainers/ItemDetailContainer';
 import Cart from './Componets/Cart';
+import CartContextProvider from './Componets/CartContext';
 
 
 function App() {
   return (
     <div >
+      <CartContextProvider>
           <BrowserRouter>
              <NavBar menu={"GamerStore"}/>
             <Routes>
@@ -23,6 +25,7 @@ function App() {
              </Routes>
              {/* <ItemCount stock={10} initial={1} /> */}
           </BrowserRouter>
+        </CartContextProvider>
         
 
           
