@@ -4,6 +4,7 @@ const Listproducto = [
        nombre: 'Teclado', 
        description: 'teclado gamer', 
        stock: 40,
+       precio:1500
        
 },
 
@@ -12,7 +13,8 @@ const Listproducto = [
   id: 2,  
   nombre: 'Mouse', 
   description: 'mouse gamer', 
-  stock: 30
+  stock: 30,
+  precio:3000
 }
 ]
 
