@@ -8,7 +8,7 @@ const Item = ({producto}) => {
                        >
                            <div className='card w-100 mt-5'>
                                <div className='card-header'>
-                                   {`${producto.nombre} - ${producto.description}`}
+                                   {`${producto.nombre} - ${producto.descripcion}`}
                                </div>
                                <div className='card-body'>
                                    {producto.foto}
