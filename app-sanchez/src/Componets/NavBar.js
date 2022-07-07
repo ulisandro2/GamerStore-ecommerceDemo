@@ -12,8 +12,7 @@ const NavBar = ({menu}) => {
            <ul className='botones'>
            
         <Link to='/'><li className='item'>Inicio</li></Link> 
-             <li className='item'>Productos</li>
-             <li className='item'>Arma tu pc</li>
+             
              <Link to='category/pc'><li className='item'>pc</li></Link>
              <Link to='category/gamer'><li className='item'>gamer</li></Link>
             <button>

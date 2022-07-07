@@ -1,6 +1,7 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 export const CartContext = createContext([]);
+export const UseCartContext = () => useContext(CartContext)
 
 const CartContextProvider = ({children}) => {
          
@@ -10,13 +11,18 @@ const CartContextProvider = ({children}) => {
   
   const AddToCart = (cantidad , producto) =>{
             
+        let item = {producto,cantidad};
+        let auxCart= [];
+
          
             if(IsInCart(producto.id)){
-               alert('el producto ya esta en el carrito');
+               item = cartList.find(e => e.producto.id === producto.id);
+               auxCart = [...cartList];
             }else{
-                setCartList([...cartList, {producto,cantidad}]);
-                alert('se agrego el producto correctamente')
+               auxCart = [item, ...cartList];
             }
+
+           setCartList(auxCart) 
   }
 
   const IsInCart = (id) =>{
