@@ -23,10 +23,23 @@ const CartContextProvider = ({children}) => {
             }
 
            setCartList(auxCart) 
+  };
+
+  const DelItem = (id) => {
+    const items = cartList.filter((producto)=> producto.item.id !== id)
+    return setCartList(items)
+  }
+
+  const IconCart = () => {
+    return cartList.reduce((acum,i) => acum + i.cantidad,0)
+  }
+
+  const PriceTotal = () => {
+    return cartList.reduce((acum,i)=> acum + i.cantidad * i.producto.precio,0)
   }
 
   const IsInCart = (id) =>{
-    return cartList&&cartList.some((i)=> i.producto.id === id)
+    return cartList&&cartList.some((i)=> i.producto.id  === id)
   }
 
   const EmptyCart = () =>{
@@ -34,7 +47,7 @@ const CartContextProvider = ({children}) => {
   }
 
     return(
-        <CartContext.Provider value={{AddToCart ,cartList,EmptyCart}}>
+        <CartContext.Provider value={{AddToCart ,cartList,EmptyCart,setCount, PriceTotal,IconCart,DelItem}}>
             {children}
         </CartContext.Provider>
     )

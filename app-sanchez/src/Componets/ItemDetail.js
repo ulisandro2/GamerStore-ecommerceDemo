@@ -20,7 +20,18 @@ const ItemDetail = ({producto}) => {
         <h2>Detalle del producto</h2>
         <div className='card w-100 mt-5'>
             <div className='card-header'>{`${producto.nombre}`}</div>
-            <div className='card-body'>{`${producto.stock}`}</div>
+            <div className='card-body'>
+              
+               <img src={producto.img} width="200px" height='150px' ></img>
+               
+            </div>
+            <div className='card-footer'>
+                    Stock Disponible: {`${producto.stock}`}
+                    
+            </div>
+            <div className='card-footer'>
+            Total: {`${producto.precio}`}
+            </div>
             
             <div className='row'>
                <div className='col'>

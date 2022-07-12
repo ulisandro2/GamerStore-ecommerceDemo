@@ -15,7 +15,7 @@ function App() {
     <div >
       <CartContextProvider>
           <BrowserRouter>
-             <NavBar menu={"GamerStore"}/>
+             <NavBar />
             <Routes>
              <Route path='/' element={<ItemListContainer />} />
              <Route path='/category/:id' element={<ItemListContainer/>}/>

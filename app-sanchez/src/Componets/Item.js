@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Item = ({producto}) => {
+
+const Item = ({producto}) =>  {
+   
+   
+   
+   
     return(
         <div className='col-md-4 p-1'
                         key={producto.id}
@@ -11,8 +16,10 @@ const Item = ({producto}) => {
                                    {`${producto.nombre} - ${producto.descripcion}`}
                                </div>
                                <div className='card-body'>
-                                   {producto.foto}
-                                   {producto.stock}
+                                   
+                                 <img src={producto.img} width="200px" height='150px' ></img>
+                                   
+                                   
                                </div>
                                <div className='card-footer'>
                                 <Link to={`/detalle/${producto.id}`}>

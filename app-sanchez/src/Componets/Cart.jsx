@@ -1,12 +1,14 @@
 import {useContext} from 'react';
 import {CartContext} from './CartContext';
+import {Button} from "react-bootstrap"
+import {Link} from "react-router-dom"
 import CartItem from './CartItem';
 import {addDoc , collection , getFirestore,serverTimestamp} from 'firebase/firestore';
 import Swal from 'sweetalert2';
 
 const Cart = () => {
 
-  const {cartList , EmptyCart} = useContext(CartContext)
+  const {cartList , EmptyCart, PriceTotal , IconCart} = useContext(CartContext)
 
   const createOrder = () => {
     const db = getFirestore()
@@ -35,13 +37,28 @@ const Cart = () => {
   return (
     <>
     <div>
-         {cartList.length < 1 ? (<p>Carrito vacio</p> )
+         {cartList.length < 1 ? (
+              <div>
+              <h4>There are no products in the cart</h4>
+    
+              <Link to={"/"} >
+                <Button variant='outline-dark' size='lg' > Go Shop </Button>
+              </Link>
+            </div>
+          )
          
          :(  
-         cartList.map((i) =><CartItem key={i.producto.id} producto={i.producto} />)
+         cartList.map((i) =>
+         
+         <><CartItem key={i.producto.id} producto={i.producto} />
+         <p>Total item {IconCart()} </p>
+         <p>Total amount {PriceTotal()}</p>
+         </>)
+           
          
          )}
     </div>
+    
     <button onClick={EmptyCart}>Borrar carrito</button>
     <button onClick={createOrder}>Confirmar orden </button>
     </>
