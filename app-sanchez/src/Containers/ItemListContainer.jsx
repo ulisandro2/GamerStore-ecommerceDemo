@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../Componets/ItemList";
 import { collection, getDocs, getFirestore, limit, orderBy, query, where } from 'firebase/firestore'
+import Slider from "../Slider";
 
 const ItemListContainer = () => {
   const [producto, setProductos] = useState([]);
@@ -25,7 +26,9 @@ const ItemListContainer = () => {
       .finally(setLoading(false));
   }, [id]);
   return (
-    <div>{loading ? <h1>Cargando</h1> : <ItemList producto={producto} />}</div>
+    <div>{loading ? <h1>Cargando</h1> :
+    
+     <><Slider /> <ItemList producto={producto} /></>}</div>
   );
 };
 

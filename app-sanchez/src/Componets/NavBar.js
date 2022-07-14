@@ -2,6 +2,7 @@ import React from 'react'
 import { BsCartFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import './css/StyleNavbar.css'
+import 'boxicons';
 
 const NavBar = ({menu}) => {
   return (
@@ -19,16 +20,18 @@ const NavBar = ({menu}) => {
     <Link to='/'> <a className="nav-link active" aria-current="page" href="#">Inicio</a>  </Link>
         </li>
         <li className="nav-item">
-        <Link to='category/productos'>      <a className="nav-link" href="#">Productos</a> </Link>
+        <Link to='/productos'>      <a className="nav-link" href="#">Productos</a> </Link>
         </li>
         <li className="nav-item">
-        <Link to='category/contacto'>  <a className="nav-link disabled">Contacto </a> </Link>
+        <Link to='/contacto'>  <a className="nav-link disabled">Contacto </a> </Link>
         </li>
       </ul>
       <form className="d-flex">
         
         <Link to='cart' >
-        <button className="btn btn-outline-success" type="submit">Cart</button>
+        <button className="btn btn-outline-success" type="submit"><box-icon name='cart'></box-icon>
+        <span className='item-total'>0</span>
+        </button>
         </Link>
       </form>
     </div>
