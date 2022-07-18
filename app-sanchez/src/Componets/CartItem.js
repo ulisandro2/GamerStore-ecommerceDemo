@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import { CartContext } from './CartContext'
 
-const CartItem = ({producto}) => {
 
-     
+const CartItem = ({producto, cantidad}) => {
+   
+ 
+
+  
+ 
   return (
     <div className='col-md-4 p-1'
                         key={producto.id}
@@ -18,6 +23,11 @@ const CartItem = ({producto}) => {
                                    {producto.stock}
                                 </div> 
                                    
+                               </div>
+                               <div className='card-footer'>
+                               <p> Total item {cantidad} </p>
+                               <p>Precio {producto.precio*cantidad}</p>
+                              
                                </div>
                             </div>
                                

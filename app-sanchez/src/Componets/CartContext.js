@@ -17,6 +17,7 @@ const CartContextProvider = ({children}) => {
          
             if(IsInCart(producto.id)){
                item = cartList.find(e => e.producto.id === producto.id);
+               producto.cantidad += cantidad;
                auxCart = [...cartList];
             }else{
                auxCart = [item, ...cartList];
@@ -25,13 +26,31 @@ const CartContextProvider = ({children}) => {
            setCartList(auxCart) 
   };
 
+  // const addCarrito = (id,producto) => {
+    
+    
+  //   const productos = producto 
+  
+  //   const check = cartList.every(producto =>{
+  //     return producto.id !== id
+  //   })
+  //   if(check){
+  //     const data = cartList.filter(producto => {
+  //       return producto.id === id
+  //     })  
+  //      setCartList([...cartList, ...data])
+  //   }else{
+  //     alert('el producto se ha agragado')
+  //   }
+  // }
+
   const DelItem = (id) => {
     const items = cartList.filter((producto)=> producto.item.id !== id)
     return setCartList(items)
   }
 
   const IconCart = () => {
-    return cartList.reduce((acum,i) => acum + i.cantidad,0)
+    return cartList.reduce((acum,i) => acum + i.cantidad ,0)
   }
 
   const PriceTotal = () => {
@@ -47,7 +66,7 @@ const CartContextProvider = ({children}) => {
   }
 
     return(
-        <CartContext.Provider value={{AddToCart ,cartList,EmptyCart,setCount, PriceTotal,IconCart,DelItem}}>
+        <CartContext.Provider value={{AddToCart,cartList,EmptyCart,setCount, PriceTotal,IconCart,DelItem}}>
             {children}
         </CartContext.Provider>
     )

@@ -7,7 +7,7 @@ const ItemList = ({producto }) => {
             {producto.map((producto)=> (
               <Item producto={producto}/>  
             )
-                 
+             ,    <h1>dadas</h1>
             )}
         </div>
     )

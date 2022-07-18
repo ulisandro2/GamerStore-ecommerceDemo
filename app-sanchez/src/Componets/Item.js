@@ -1,13 +1,18 @@
-import React from "react";
+import React, { createContext, useContext } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "./CartContext";
 
 
 const Item = ({producto}) =>  {
    
+   const value = useContext(CartContext)
+   const addCarrito = value.addCarrito
    
-   
-   
+  
     return(
+         <>
+       
+
         <div className='col-md-4 p-1'
                         key={producto.id}
                        >
@@ -27,10 +32,17 @@ const Item = ({producto}) =>  {
                                        Detalle del producto
                                    </button>
                                    </Link>
+                                   {/* <button className='btn btn-outline-primary btn-block' onClick={()=> addCarrito(producto.id)}>
+                                       Agregar al carrito
+                                   </button> */}
                                </div>
                            </div>
                        </div>
+
+                       </>
     )
+
+    
 }
 
 export default Item

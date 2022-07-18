@@ -50,15 +50,20 @@ const Cart = () => {
          :(  
          cartList.map((i) =>
          
-         <><CartItem key={i.producto.id} producto={i.producto} />
-         <p>Total item {IconCart()} </p>
-         <p>Total amount {PriceTotal()}</p>
+         <><CartItem key={i.producto.id} producto={i.producto} cantidad={i.cantidad}
+         />
+         
+           
+
          </>)
            
          
          )}
     </div>
+
     
+    <p>Total item {IconCart()} </p>
+    <p>Total amount {PriceTotal()}</p>
     <button onClick={EmptyCart}>Borrar carrito</button>
     <button onClick={createOrder}>Confirmar orden </button>
     </>

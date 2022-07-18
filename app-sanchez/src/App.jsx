@@ -8,8 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDetailContainer from './Containers/ItemDetailContainers/ItemDetailContainer';
 import Cart from './Componets/Cart';
 import CartContextProvider from './Componets/CartContext';
-import Slider from './Slider';
-import ItemList from './Componets/ItemList';
+import Slider from './Componets/Slider';
 import 'boxicons';
 
 
@@ -24,7 +23,7 @@ function App() {
             <Routes>
             <Route path='/' element={<Slider/>}/>
              <Route path='/productos' element={<ItemListContainer/>}/>
-             
+             <Route path='/category/:id' element={<ItemListContainer/>} />
              <Route path='/detalle/:id' element={<ItemDetailContainer/>} />
              <Route path='/cart' element={<Cart/>} />
                <Route path='*' element={<Navigate to='/' />} />

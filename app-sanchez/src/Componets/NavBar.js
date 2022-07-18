@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { BsCartFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import './css/StyleNavbar.css'
 import 'boxicons';
+import { CartContext, UseCartContext } from './CartContext';
 
 const NavBar = ({menu}) => {
+   const {cartList,IconCart} = UseCartContext()
+   
+  
+
+
   return (
     <div>
 
@@ -30,7 +36,7 @@ const NavBar = ({menu}) => {
         
         <Link to='cart' >
         <button className="btn btn-outline-success" type="submit"><box-icon name='cart'></box-icon>
-        <span className='item-total'>0</span>
+        <span className='item-total'>{cartList.lenght < 1 ? '' : <p>{IconCart()}</p>}</span>
         </button>
         </Link>
       </form>
