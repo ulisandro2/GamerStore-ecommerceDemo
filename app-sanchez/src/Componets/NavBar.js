@@ -27,9 +27,7 @@ const NavBar = () => {
         <li className="nav-item">
         <Link style={{textDecoration:'none',}} to='/productos'>      <a className="nav-link" href="#">Productos</a> </Link>
         </li>
-        <li className="nav-item">
-        <Link to='category/pc'>  <a className="nav-link disabled">Contacto </a> </Link>
-        </li>
+        
       </ul>
       <form className="d-flex">
         

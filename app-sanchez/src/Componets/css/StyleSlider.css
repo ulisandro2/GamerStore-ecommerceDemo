@@ -64,7 +64,7 @@
     border-radius: 10px;
     display: inline-block;
     margin-left: 10px;
-    margin-right: 10px;
+    margin-right: 20px;
     box-shadow: 5px 5px 5px 5px rgba(0 0 0 /12%);
     cursor: pointer;
 }
@@ -78,6 +78,7 @@
     border-top-left-radius:10px ;
     border-top-right-radius:10px ;
     background-size: cover;
+
     
     
     
@@ -90,7 +91,7 @@
 .slider-card-title{
     font-weight: 500;
     margin-top: 10px;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
 }
 
 .slider-card-price{

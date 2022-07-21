@@ -14,7 +14,7 @@ const CartItem = ({producto, cantidad}) => {
                        >
                            <div className='card w-100 mt-5'>
                                <div className='card-header'>
-                                   {`${producto.nombre} - ${producto.descripcion}`}
+                                   {`${producto.nombre} `}
                                </div>
                                <div className='card-body'>
                                <img src={producto.img} width='200px' height='150px' ></img>

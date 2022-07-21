@@ -40,10 +40,12 @@ const Cart = () => {
     <div>
          {cartList.length < 1 ? (
               <div>
-              <h4>There are no products in the cart</h4>
+              <h4 className='tituloCart'>No hay productos en el carrito</h4>
     
               <Link to={"/"} >
-                <Button variant='outline-dark' size='lg' > Go Shop </Button>
+                <div className='btnCart'>
+                <Button  variant='outline-primary' size='lg' > Ir a tienda </Button>
+                </div>
               </Link>
             </div>
           )

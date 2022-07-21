@@ -8,6 +8,7 @@ import Cart from './Componets/Cart';
 import CartContextProvider from './Componets/CartContext';
 import Slider from './Componets/Slider';
 import 'boxicons';
+import Footer from './Componets/Footer';
 
 
 
@@ -32,6 +33,7 @@ function App() {
              <Route path='/cart' element={<Cart/>} />
                <Route path='*' element={<Navigate to='/' />} />
              </Routes>
+             <Footer/>
           
           </BrowserRouter>
         </CartContextProvider>

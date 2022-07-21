@@ -13,6 +13,14 @@ import { CartContext } from "./CartContext";
 
 const Item = ({producto}) =>  {
   
+  const {AddToCart} = useContext(CartContext)
+
+
+  const onAdd = () =>{
+    
+    AddToCart( producto);
+ }
+
   
 
    
