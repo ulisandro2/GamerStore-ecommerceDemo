@@ -1,0 +1,31 @@
+.categorias{
+    text-align: center;
+    text-decoration-style: none;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+
+}
+
+#tituloCategorias{
+    color: white;
+    padding-bottom :30px; 
+    padding-top: 50px;
+}
+
+.categorias li{
+    background-color: rgb(23, 26, 24);
+    font-size: 1.3rem;
+    text-decoration-style: none;
+    list-style: none;
+    padding: 15px 15px 15px 15px;
+    border: solid 1px black;
+    color: rgb(255, 255, 255);
+
+}
+
+.categorias li:hover{
+    background-color: rgba(18, 128, 55, 0.767);
+}

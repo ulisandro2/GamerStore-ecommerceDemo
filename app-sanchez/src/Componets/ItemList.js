@@ -3,12 +3,16 @@ import Item from "./Item"
 
 const ItemList = ({producto }) => {
     return (
-        <div>
-            {producto.map((producto)=> (
-              <Item producto={producto}/>  
-            )
-             ,    <h1>dadas</h1>
+        
+         <div className="container">
+             <div className="row">
+             {producto.map((producto)=> (
+                <div className="col-md-6">
+                <Item producto={producto}/> 
+              </div>
+              )
             )}
+           </div> 
         </div>
     )
 }

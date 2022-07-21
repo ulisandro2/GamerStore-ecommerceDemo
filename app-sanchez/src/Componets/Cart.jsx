@@ -5,6 +5,7 @@ import {Link} from "react-router-dom"
 import CartItem from './CartItem';
 import {addDoc , collection , getFirestore,serverTimestamp} from 'firebase/firestore';
 import Swal from 'sweetalert2';
+import '../Componets/css/StyleCart.css'
 
 const Cart = () => {
 
@@ -47,25 +48,33 @@ const Cart = () => {
             </div>
           )
          
-         :(  
+         :
+        
+
+         (  
          cartList.map((i) =>
          
-         <><CartItem key={i.producto.id} producto={i.producto} cantidad={i.cantidad}
+         <>
+         
+         <CartItem key={i.producto.id} producto={i.producto} cantidad={i.cantidad}
          />
          
-           
+         
+         {/* <p>Total item {IconCart()} </p> */}
+         {/* <p>Total amount {PriceTotal()}</p> */}
+        
 
-         </>)
+         </>
+         )
            
          
          )}
     </div>
-
+    <p className='precioTotal'>Total a pagar {PriceTotal()}</p>
+    <button className='btnBorrar' onClick={EmptyCart}>Borrar carrito</button>
+         <button className='btnOrden' onClick={createOrder}>Confirmar orden </button>
     
-    <p>Total item {IconCart()} </p>
-    <p>Total amount {PriceTotal()}</p>
-    <button onClick={EmptyCart}>Borrar carrito</button>
-    <button onClick={createOrder}>Confirmar orden </button>
+    
     </>
   )
   

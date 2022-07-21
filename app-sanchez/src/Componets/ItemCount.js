@@ -18,10 +18,12 @@ const AgregarProducto = ()=>{
 return(
     <>
        <div>
-            <h2>Total productos = {count}</h2>
-            <button onClick={Agregar}>+</button>
-            <button onClick={Restar}>-</button>
-            <button onClick={AgregarProducto} className='btn btn-success w-30'>Agregar</button>
+         <div className="contador">
+            <h2 className="tituloContador">Total productos = {count}</h2>
+            <button className="btnCountMas" onClick={Agregar}>+</button>
+            <button className="btnCountMenos" onClick={Restar}>-</button>
+            <button className="btnCount" onClick={AgregarProducto}>Agregar</button>
+            </div>
        </div>
     
     

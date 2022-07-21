@@ -1,45 +1,57 @@
-import React, { createContext, useContext } from "react";
+
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import '../Componets/css/StyleItem.css';
 import { CartContext } from "./CartContext";
 
 
+
+
+
+
+
+
 const Item = ({producto}) =>  {
-   
-   const value = useContext(CartContext)
-   const addCarrito = value.addCarrito
-   
   
+  
+
+   
     return(
          <>
-       
 
-        <div className='col-md-4 p-1'
-                        key={producto.id}
-                       >
-                           <div className='card w-100 mt-5'>
-                               <div className='card-header'>
-                                   {`${producto.nombre} - ${producto.descripcion}`}
-                               </div>
-                               <div className='card-body'>
-                                   
-                                 <img src={producto.img} width="200px" height='150px' ></img>
-                                   
-                                   
-                               </div>
-                               <div className='card-footer'>
-                                <Link to={`/detalle/${producto.id}`}>
-                                   <button className='btn btn-outline-primary btn-block'>
-                                       Detalle del producto
-                                   </button>
-                                   </Link>
-                                   {/* <button className='btn btn-outline-primary btn-block' onClick={()=> addCarrito(producto.id)}>
-                                       Agregar al carrito
-                                   </button> */}
-                               </div>
-                           </div>
+                       <div className="productos">
+                        <div className='producto'>
+                           <a href="#"> 
+                            <div className="producto-imagen">
+                                <img src={producto.img}></img>
+                            </div>
+                        </a>
+                        <div className="producto-footer">
+                            <h1>{producto.nombre} </h1>
+                            <p>{producto.categoria}</p>
+                            <p className="price">${producto.precio}</p>
+                        </div>
+                        <div className="buttom">
+                            <button  className="btn">
+                                
+                                Agregar
+                                
+                            </button>
+                           <div>
+                             <Link to={`/detalle/${producto.id}`}>
+                             <button className="btn">Detalle</button>
+                             </Link>
+                            </div> 
+                        </div>
+                        </div>
                        </div>
+                        
+                        
+                       
 
-                       </>
+                       
+
+         </> 
     )
 
     

@@ -1,7 +1,9 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
+import {  Link} from "react-router-dom";
 import { useParams } from "react-router-dom";
 import ItemList from "../Componets/ItemList";
-import { collection, getDocs, getFirestore, limit, orderBy, query, where } from 'firebase/firestore'
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
+import '../Componets/css/StyleItemListContainer.css'
 
 
 const ItemListContainer = () => {
@@ -9,6 +11,7 @@ const ItemListContainer = () => {
   const [loading, setLoading] = useState(true);
 
   const { id } = useParams();
+  
 
   useEffect(() => {
     const db = getFirestore(); // ** conectar a la base de datos
@@ -27,20 +30,37 @@ const ItemListContainer = () => {
   }, [id]);
   return (
     <div>
-      
+     
+         
       {loading ? <h1>Cargando</h1> 
       
       :
     
      <>  
      
-    <h1>jdasjdkasdj</h1>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium molestias aspernatur qui fuga quia culpa impedit. Unde, quidem deleniti necessitatibus ullam accusamus dicta ut praesentium voluptatibus illo soluta. Ducimus, libero.</p>
+    <h1 id="tituloCategorias">Filtrado de categorias</h1>
 
-
+    <div className="container-productos">
+    <ul className="categorias">
+    <Link style={{textDecoration:'none',}} to={`category/perifericos`}> <li>Perifericos</li> </Link>
+    <Link style={{textDecoration:'none',}} to={`category/procesadores`}>  <li>Procesadores</li> </Link>
+    <Link style={{textDecoration:'none',}} to={`category/almacenamiento`}>  <li>Almacenamiento</li> </Link>
+    <Link style={{textDecoration:'none',}} to={`category/placas de video`}>  <li>Placas de video</li> </Link>
+    <Link style={{textDecoration:'none',}} to={`category/ram`}>  <li>Memorias ram </li> </Link>
+    
+   
+    </ul>
+   
+    
+     
+   
      <ItemList producto={producto} />
+
+     </div>
      
      </>}
+
+     
      
      </div>
   );

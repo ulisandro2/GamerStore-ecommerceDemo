@@ -1,0 +1,33 @@
+.precioTotal{
+    font-weight: 600;
+    color: white;
+}
+
+.btnBorrar{
+    
+    text-align: center;
+    border: none;
+    outline: 0;
+    background: blue;
+    font-size: 1.1rem;
+    color: rgb(255, 253, 253);
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 1rem;
+    margin-left: 20px;
+}
+
+.btnOrden{
+    margin-left: 20px;
+    text-align: center;
+    border: none;
+    outline: 0;
+    background: blue;
+    font-size: 1.1rem;
+    color: rgb(255, 253, 253);
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 1rem;
+}

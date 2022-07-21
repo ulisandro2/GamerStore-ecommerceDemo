@@ -1,11 +1,10 @@
-import React, { useContext } from 'react'
-import { BsCartFill } from "react-icons/bs";
+import React from 'react'
 import { Link } from 'react-router-dom';
 import './css/StyleNavbar.css'
 import 'boxicons';
-import { CartContext, UseCartContext } from './CartContext';
+import {  UseCartContext } from './CartContext';
 
-const NavBar = ({menu}) => {
+const NavBar = () => {
    const {cartList,IconCart} = UseCartContext()
    
   
@@ -23,13 +22,13 @@ const NavBar = ({menu}) => {
     <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-    <Link to='/'> <a className="nav-link active" aria-current="page" href="#">Inicio</a>  </Link>
+    <Link style={{textDecoration:'none',}} to='/'> <a className="nav-link active " aria-current="page" href="#">Inicio</a>  </Link>
         </li>
         <li className="nav-item">
-        <Link to='/productos'>      <a className="nav-link" href="#">Productos</a> </Link>
+        <Link style={{textDecoration:'none',}} to='/productos'>      <a className="nav-link" href="#">Productos</a> </Link>
         </li>
         <li className="nav-item">
-        <Link to='/contacto'>  <a className="nav-link disabled">Contacto </a> </Link>
+        <Link to='category/pc'>  <a className="nav-link disabled">Contacto </a> </Link>
         </li>
       </ul>
       <form className="d-flex">

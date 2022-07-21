@@ -26,23 +26,7 @@ const CartContextProvider = ({children}) => {
            setCartList(auxCart) 
   };
 
-  // const addCarrito = (id,producto) => {
-    
-    
-  //   const productos = producto 
   
-  //   const check = cartList.every(producto =>{
-  //     return producto.id !== id
-  //   })
-  //   if(check){
-  //     const data = cartList.filter(producto => {
-  //       return producto.id === id
-  //     })  
-  //      setCartList([...cartList, ...data])
-  //   }else{
-  //     alert('el producto se ha agragado')
-  //   }
-  // }
 
   const DelItem = (id) => {
     const items = cartList.filter((producto)=> producto.item.id !== id)
@@ -65,8 +49,13 @@ const CartContextProvider = ({children}) => {
     setCartList([])
   }
 
+  const value = {
+    AddToCart:AddToCart,
+    cartList: [cartList,setCartList]
+  }
+
     return(
-        <CartContext.Provider value={{AddToCart,cartList,EmptyCart,setCount, PriceTotal,IconCart,DelItem}}>
+        <CartContext.Provider value={{value,AddToCart,cartList,EmptyCart,setCount, PriceTotal,IconCart,DelItem}}>
             {children}
         </CartContext.Provider>
     )

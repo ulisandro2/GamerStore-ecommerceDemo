@@ -1,13 +1,10 @@
-import React, { useContext } from 'react'
+
 import portada from './imagenes/iniciologitech.gif'
 import './css/StyleSlider.css'
-import teclado from './imagenes/teclado.png'
-import mouse from './imagenes/mouse.png'
-
 import { BsChevronLeft } from 'react-icons/bs';
 import { BsChevronRight } from 'react-icons/bs';
-import { LoadBundleTask } from 'firebase/firestore';
-import CartContextProvider from './CartContext'
+import { Link } from 'react-router-dom'
+
 
 
 
@@ -53,7 +50,7 @@ const Slider = () => {
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src={portada} className="d-block w-100" alt="..." />
+          <Link to='/productos'>   <img src={portada} className="d-block w-100" alt="..." /></Link>   
           </div>
           <div className="carousel-item">
             <img src={portada} className="d-block w-100" alt="..." />
@@ -72,24 +69,29 @@ const Slider = () => {
         </button>
       </div>
     </div>
-                                     <h1>Productos Destacados </h1>
+                                     <h1 id='tituloSlider'>Productos Destacados </h1>
     
                    <div id='main-slider-container'>
                    
-                   <BsChevronLeft size={40} className='slider-icon left' onClick={slideLeft} />
+                   <BsChevronLeft size={40} className='slider-icon left' onClick={slideRight} />
                    <div id='slider'>
-                         {slides.map((slide, index)=>{
+                         {
+                         slides.map((slide, index)=>{
                              return(
+                              
                                 <div className='slider-card' key={index}> 
-                                      <div className='slider-card-image'style={{backgroundImage:`url(${slide.imagen})`}} ></div> 
+                               <Link to='/productos'>
+                                      <div id='slider-card-image'  style={{backgroundImage:`url(${slide.imagen})`}}></div> </Link> 
                                       <div className='slider-card-title'>{slide.title}</div>
-                                      <div className='slider-card-price'>{slide.price}</div>
+                                      <div className='slider-card-price'>${slide.price}</div>
+                                
                                 </div>
+                                
                              )
                          })
                          }
                     </div>
-                    <BsChevronRight size={40} className='slider-icon right' onClick={slideRight} />
+                    <BsChevronRight size={40} className='slider-icon right' onClick={slideLeft} />
                     
                    </div>
     

@@ -18,15 +18,13 @@ const CartItem = ({producto, cantidad}) => {
                                </div>
                                <div className='card-body'>
                                <img src={producto.img} width='200px' height='150px' ></img>
-                                   
-                                <div className='card-footer'> 
-                                   {producto.stock}
-                                </div> 
+                              
                                    
                                </div>
                                <div className='card-footer'>
-                               <p> Total item {cantidad} </p>
-                               <p>Precio {producto.precio*cantidad}</p>
+                               <p> Productos seleccionados:  {cantidad} </p>
+                               <p>Precio del producto ${producto.precio}</p>
+                               <p> Precio Total $ {producto.precio*cantidad}</p>
                               
                                </div>
                             </div>
