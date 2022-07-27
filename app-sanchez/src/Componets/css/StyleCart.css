@@ -3,6 +3,23 @@
     color: white;
 }
 
+.bodyCart{
+    color: rgb(253, 253, 253);
+   
+}
+
+.precio{
+    color: white;
+}
+
+.items{
+    color: white;
+}
+
+#tabla{
+    background-color: aquamarine;
+}
+
 .btnBorrar{
     
     text-align: center;
@@ -45,4 +62,16 @@
     
 
 
+}
+
+#tituloItem{
+    color: black;
+}
+
+.precioItem{
+    color: black;
+}
+
+.cantidadItem{
+    color: black;
 }

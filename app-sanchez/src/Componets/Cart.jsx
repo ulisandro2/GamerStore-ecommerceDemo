@@ -1,26 +1,46 @@
 import {useContext} from 'react';
 import {CartContext} from './CartContext';
-import {Button} from "react-bootstrap"
+import {Button ,Form} from "react-bootstrap"
 import {Link} from "react-router-dom"
 import CartItem from './CartItem';
 import {addDoc , collection , getFirestore,serverTimestamp} from 'firebase/firestore';
 import Swal from 'sweetalert2';
 import '../Componets/css/StyleCart.css'
+import { MDBRow, MDBTable, MDBTableBody, MDBTableHead } from "mdb-react-ui-kit"
+
+import { useState } from 'react';
 
 const Cart = () => {
 
   const {cartList , EmptyCart, PriceTotal , IconCart} = useContext(CartContext)
+  const [dataForm , setDataForm] = useState({
+    nombre:"",
+    email:"",
+    telefono:"",
 
-  const createOrder = () => {
-    const db = getFirestore()
-    const queryCollection = collection(db,'orders')
-    // const total = PriceTotal()
+  })
+
+
+  async function  createOrder(e)  {
+
+   e.preventDefault()
+
+   let  order ={}
+
+   order.buyer =dataForm
+   order.total = PriceTotal()
+   order.items = cartList.map((CartItem)=>{
     
-    const user = {nombre: 'ulises sanchez',email: 'sanchezulises@gmail.com',phone:'1151399129'}
-    const order = {user , cartList , created_at:serverTimestamp()}
-    const request = addDoc(queryCollection,order)
-
-    request
+       const id = CartItem.producto.id
+       const nombre = CartItem.producto.nombre
+       const precio = CartItem.producto.precio * CartItem.cantidad
+       return {id,nombre,precio}
+   })
+   
+    
+    const db = getFirestore()
+    const orderCollection = collection(db,'orders')
+    addDoc(orderCollection,order)
        .then((resp) => {
         Swal.fire('su compra se completo' , 'numero de orden:' + resp.id, 'completado ')
            })
@@ -35,50 +55,144 @@ const Cart = () => {
 
   }
 
-  return (
-    <>
-    <div>
-         {cartList.length < 1 ? (
-              <div>
-              <h4 className='tituloCart'>No hay productos en el carrito</h4>
-    
-              <Link to={"/"} >
+  const handleChange = (e) => {
+    setDataForm({
+      ...dataForm,
+      [e.target.nombre]:e.target.value,
+    })
+
+  }
+
+
+  if (cartList.length < 1) {
+    return (
+      <div>
+         <h4 className='tituloCart'>No hay productos en el carrito</h4>
+
+        <Link to={"/"} >
                 <div className='btnCart'>
                 <Button  variant='outline-primary' size='lg' > Ir a tienda </Button>
-                </div>
-              </Link>
-            </div>
-          )
+                 </div>
+       </Link>
+      </div>
+    )
+
+  } else {
+    return (
+      <div className='bodyCart'>
+        <h1>Carrito</h1>
+        <MDBRow className='row-cols-1 row-cols-md-4 g-4'>
+        {cartList.map((i) => (
+          <CartItem key={i.producto.id} producto={i.producto} cantidad={i.cantidad} />
+        ))}
+       
+        </MDBRow> 
+
+       <div>
+
+          <MDBTable>
+      <MDBTableHead>
+        <tr id='tabla' className='table-success'>
+          <th scope='col'>Total a Pagar </th>
+          <th scope='col'>Total Productos</th>
+          <th scope='col'></th>
+        </tr>
+      </MDBTableHead>
+      <MDBTableBody>
+        <tr >
+          <th className='precio' scope='row'>$ {PriceTotal()} </th>
+          <td className='items'>{IconCart()}</td>
+          <td><Button variant='outline-danger' size='sm' onClick={EmptyCart}>Borrar Carrito</Button></td>
+          
+        </tr>
+      </MDBTableBody>
+    </MDBTable>
+
+          <div className="form">
+            <h4>Complete el formulario para confirmar la compra </h4>
+            <Form onSubmit={createOrder}>
+              <Form.Group className="mb-3">
+                <Form.Label>Nombre</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Nombre"
+                  onChange={handleChange}
+                  required={true}
+                  id="nombre"
+                  name="nombre"
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Telefono</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Phone"
+                  onChange={handleChange}
+                  required={true}
+                  id="telefono"
+                  name="telefono"
+                />
+              </Form.Group>
+              <Form.Group className="mb-3">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="Email"
+                  onChange={handleChange}
+                  required={true}
+                  id="email"
+                  name="email"
+                />
+              </Form.Group>
+
+              <Button variant="success" size='sm' type="submit">
+                Confirmar orden
+              </Button>
+            </Form>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  // return (
+  //   <>
+  //   <div>
+  //        {cartList.length < 1 ? (
+  //             <div>
+  //             <h4 className='tituloCart'>No hay productos en el carrito</h4>
+    
+  //             <Link to={"/"} >
+  //               <div className='btnCart'>
+  //               <Button  variant='outline-primary' size='lg' > Ir a tienda </Button>
+  //               </div>
+  //             </Link>
+  //           </div>
+  //         )
          
-         :
+  //        :
         
 
-         (  
-         cartList.map((i) =>
+  //        (  
+  //        cartList.map((i) =>
          
-         <>
+  //        <>
          
-         <CartItem key={i.producto.id} producto={i.producto} cantidad={i.cantidad}
-         />
-         
-         
-         {/* <p>Total item {IconCart()} </p> */}
-         {/* <p>Total amount {PriceTotal()}</p> */}
-        
-
-         </>
-         )
+  //        <CartItem key={i.producto.id} producto={i.producto} cantidad={i.cantidad} />
+  //        </>
+  //        )
            
          
-         )}
-    </div>
-    <p className='precioTotal'>Total a pagar {PriceTotal()}</p>
-    <button className='btnBorrar' onClick={EmptyCart}>Borrar carrito</button>
-         <button className='btnOrden' onClick={createOrder}>Confirmar orden </button>
-    
-    
-    </>
-  )
+  //        )}
+  //   </div>
+  //    <p className='precioTotal'>Total a pagar ${PriceTotal()}</p>
+     
+  // <button className='btnBorrar' onClick={EmptyCart}>Borrar carrito</button>
+  //   <Link to='/checkout'>
+  //   <button className='btnOrden' onClick={createOrder} >Confirmar orden </button>  
+  //   </Link>
+  //   </>
+  // )
   
 }
       

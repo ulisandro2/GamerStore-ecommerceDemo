@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { CartContext } from './CartContext'
+import '../Componets/css/StyleCart.css'
 
 
 const CartItem = ({producto, cantidad}) => {
@@ -13,7 +14,7 @@ const CartItem = ({producto, cantidad}) => {
                         key={producto.id}
                        >
                            <div className='card w-100 mt-5'>
-                               <div className='card-header'>
+                               <div id='tituloItem' className='card-header'>
                                    {`${producto.nombre} `}
                                </div>
                                <div className='card-body'>
@@ -22,9 +23,9 @@ const CartItem = ({producto, cantidad}) => {
                                    
                                </div>
                                <div className='card-footer'>
-                               <p> Productos seleccionados:  {cantidad} </p>
-                               <p>Precio del producto ${producto.precio}</p>
-                               <p> Precio Total $ {producto.precio*cantidad}</p>
+                               <p className='precioItem'> Productos seleccionados:  {cantidad} </p>
+                               <p className='cantidadItem'>Precio del producto ${producto.precio}</p>
+                             
                               
                                </div>
                             </div>

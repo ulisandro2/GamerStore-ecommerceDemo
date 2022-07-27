@@ -18,7 +18,7 @@ const Item = ({producto}) =>  {
 
   const onAdd = () =>{
     
-    AddToCart( producto);
+    AddToCart( producto  );
  }
 
   
@@ -40,7 +40,7 @@ const Item = ({producto}) =>  {
                             <p className="price">${producto.precio}</p>
                         </div>
                         <div className="buttom">
-                            <button  className="btn">
+                            <button onClick={onAdd} className="btn">
                                 
                                 Agregar
                                 

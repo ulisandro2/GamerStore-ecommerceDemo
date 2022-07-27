@@ -13,6 +13,9 @@ import Footer from './Componets/Footer';
 
 
 
+
+
+
 function App() {
 
   
@@ -20,6 +23,7 @@ function App() {
   return (
     <div >
       <CartContextProvider>
+     
           <BrowserRouter>
              <NavBar />
              
@@ -31,11 +35,14 @@ function App() {
              {/* <Route path='productos/category/:id' element={<ItemListContainer/>} /> */}
              <Route path='/detalle/:id' element={<ItemDetailContainer/>} />
              <Route path='/cart' element={<Cart/>} />
+          
+              
                <Route path='*' element={<Navigate to='/' />} />
              </Routes>
              <Footer/>
           
           </BrowserRouter>
+          
         </CartContextProvider>
         
 
