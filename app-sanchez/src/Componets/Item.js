@@ -1,5 +1,5 @@
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import '../Componets/css/StyleItem.css';
 import { CartContext } from "./CartContext";
@@ -11,19 +11,10 @@ import { CartContext } from "./CartContext";
 
 
 
+
 const Item = ({producto}) =>  {
-  
-  const {AddToCart} = useContext(CartContext)
 
 
-  const onAdd = () =>{
-    
-    AddToCart( producto  );
- }
-
-  
-
-   
     return(
          <>
 
@@ -40,7 +31,7 @@ const Item = ({producto}) =>  {
                             <p className="price">${producto.precio}</p>
                         </div>
                         <div className="buttom">
-                            <button onClick={onAdd} className="btn">
+                            <button   className="btn">
                                 
                                 Agregar
                                 

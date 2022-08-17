@@ -4,13 +4,15 @@ import './css/StyleSlider.css'
 import { BsChevronLeft } from 'react-icons/bs';
 import { BsChevronRight } from 'react-icons/bs';
 import { Link } from 'react-router-dom'
-
+import Cards from './Cards';
 
 
 
 
 
 const Slider = () => {      
+
+
 
 
 
@@ -41,6 +43,7 @@ const Slider = () => {
 
   return (
     <>
+     
     <div>
       <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-indicators">
@@ -66,9 +69,23 @@ const Slider = () => {
         <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
           <span className="carousel-control-next-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Next</span>
+
         </button>
       </div>
     </div>
+
+
+    <h1 className='text-center'> Las mejores marcas</h1>
+
+
+         <Cards/>
+ 
+
+
+
+
+
+
                                      <h1 id='tituloSlider'>Productos Destacados </h1>
     
                    <div id='main-slider-container'>
@@ -84,7 +101,6 @@ const Slider = () => {
                                       <div id='slider-card-image'  style={{backgroundImage:`url(${slide.imagen})`}}></div> </Link> 
                                       <div className='slider-card-title'>{slide.title}</div>
                                       <div className='slider-card-price'>${slide.price}</div>
-                                
                                 </div>
                                 
                              )
@@ -94,8 +110,12 @@ const Slider = () => {
                     <BsChevronRight size={40} className='slider-icon right' onClick={slideLeft} />
                     
                    </div>
+
+
+
+                  
     
-    
+                   
     </>
     
   )

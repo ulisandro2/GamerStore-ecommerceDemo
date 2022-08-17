@@ -21,41 +21,6 @@ const ItemDetail = ({producto}) => {
   return (
  
 
-
-   //   <div className='col-md-4 p-1' key={producto.id}>
-   //      <h2>Detalle del producto</h2>
-   //      <div className='card w-100 mt-5'>
-   //          <div className='card-header'>{`${producto.nombre}`}</div>
-   //          <div className='card-body'>
-              
-   //             <img src={producto.img} width="200px" height='150px' ></img>
-               
-   //          </div>
-   //          <div className='card-footer'>
-   //                  Stock Disponible: {`${producto.stock}`}
-                    
-   //          </div>
-   //          <div className='card-footer'>
-   //          Total: {`${producto.precio}`}
-   //          </div>
-            
-   //          <div className='row'>
-   //             <div className='col'>
-   //                  {
-   //                   cantidad ?
-   //                   <Link to="/Cart" >
-   //                   <button className='btn btn-outline-primary'>Ir al Cart</button>
-   //                   </Link>
-   //                   :
-   //                   <ItemCount initial={1} stock={10} onAdd={onAdd} />  
-   //               }                 
-
-   //             </div>
-   //             </div>
-   //          </div>
-        
-   //   </div>
-
    <div className='container' id='detalles'>
       <h2>{producto.nombre}</h2>
       <p className='price'>${producto.precio}</p>
@@ -68,7 +33,7 @@ const ItemDetail = ({producto}) => {
                       <button className='btnCarrito'>Ir al Cart</button>
                      </Link>
                       :
-                    <ItemCount initial={1} stock={10} onAdd={onAdd} />  
+                    <ItemCount initial={1} stock={20} onAdd={onAdd} />  
                 }                 
 
               </div>
