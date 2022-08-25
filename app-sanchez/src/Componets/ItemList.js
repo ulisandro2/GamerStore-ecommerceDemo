@@ -7,7 +7,7 @@ const ItemList = ({producto }) => {
          <div className="container">
              <div className="row">
              {producto.map((producto)=> (
-                <div className="col-md-6">
+                <div className="row-md-6">
                 <Item producto={producto}/> 
               </div>
               )

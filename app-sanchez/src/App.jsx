@@ -11,6 +11,10 @@ import CartContextProvider from './Componets/CartContext';
 import Slider from './Componets/Slider';
 import 'boxicons';
 import Footer from './Componets/Footer';
+import Sponsors from './Componets/Sponsors';
+
+
+
 
 
 
@@ -33,7 +37,8 @@ function App() {
             <Route path='/' element={<Slider/>}/>
             <Route path='productos' element={<ItemListContainer/>}>
              <Route path='category/:id' element={<ItemListContainer/>}  />
-             </Route>
+             
+          </Route>
              {/* <Route path='productos/category/:id' element={<ItemListContainer/>} /> */}
              <Route path='/detalle/:id' element={<ItemDetailContainer/>} />
              <Route path='/cart' element={<Cart/>} />
@@ -41,6 +46,8 @@ function App() {
               
                <Route path='*' element={<Navigate to='/' />} />
              </Routes>
+             <Sponsors/>
+            
              <Footer/>
           
           </BrowserRouter>

@@ -10,6 +10,9 @@ import Cards from './Cards';
 
 
 
+
+
+
 const Slider = () => {      
 
 
@@ -75,18 +78,18 @@ const Slider = () => {
     </div>
 
 
-    <h1 className='text-center'> Las mejores marcas</h1>
+                           <h1 className='text-center'> Las mejores marcas</h1>
 
 
-         <Cards/>
+                            <Cards/>
  
 
 
 
+             
 
 
-
-                                     <h1 id='tituloSlider'>Productos Destacados </h1>
+                             <h1 id='tituloSlider'>Productos Destacados </h1>
     
                    <div id='main-slider-container'>
                    
@@ -113,7 +116,7 @@ const Slider = () => {
 
 
 
-                  
+               
     
                    
     </>

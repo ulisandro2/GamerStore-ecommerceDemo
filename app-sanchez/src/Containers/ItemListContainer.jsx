@@ -19,7 +19,7 @@ const ItemListContainer = () => {
 
     getDocs(
       id
-        ? query(queryCollection, where("categoria", "==", id)) // ** aquellos que coincidan )
+        ? query(queryCollection, where("categoria" , "==", id)) // ** aquellos que coincidan )
         : queryCollection
     )
       .then((resp) =>
@@ -28,17 +28,43 @@ const ItemListContainer = () => {
       .catch((err) => console.log(err))
       .finally(setLoading(false));
   }, [id]);
+
+
+
+  const [isActive, setIsActive] = useState(false);
+  
+  const [selected , setSelected]= useState("")
+
+
+  const options = [
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/perifericos`} > <li>Perifericos</li></Link>,
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/procesadores`} > <li>Procesadores</li></Link>,
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/perifericos`} > <li>Perifericos</li></Link>,
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/perifericos`} > <li>Perifericos</li></Link>,
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/perifericos`} > <li>Perifericos</li></Link>,
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/perifericos`} > <li>Perifericos</li></Link>,
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/perifericos`} > <li>Perifericos</li></Link>,
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/perifericos`} > <li>Perifericos</li></Link>,
+  ]
+  
+
+  
   return (
-    <div>
+   
+   
+   
+   
+   <div className="body">
      
          
-      {loading ? <h1>Cargando</h1> 
-      
-      :
+    {loading ? <h1>Cargando</h1> 
     
-     <>  
+    :
+  
+      <>  
+   
      
-    <h1 id="tituloCategorias">Filtrado de categorias</h1>
+    {/* <h1 id="tituloCategorias">Filtrado de categorias</h1>
 
     <div className="container-productos">
     <ul className="categorias">
@@ -51,12 +77,43 @@ const ItemListContainer = () => {
    
     </ul>
    
-    
+    </div> */}
      
    
-     <ItemList producto={producto} />
+    <div className="Dropdown">
+      <div className="dropdown-btn" onClick={(e)=> setIsActive(!isActive)}>
+        
+      Categorias:        
+      {selected}
+      <box-icon name='caret-down' ></box-icon>
+      
+      </div>
+      {isActive && (    
+      <div className="dropdown-content">
+        {options.map((option) => (
 
-     </div>
+       <div  className="dropdown-item" onClick={(e) => {
+        
+        setSelected(option);
+        setIsActive(false);
+       
+       }}>
+          {option}
+        </div>
+       
+         ))}
+        </div>    
+      )}
+    </div>
+   
+
+   
+   
+   
+   
+   <ItemList producto={producto} />
+
+     
      
      </>}
 

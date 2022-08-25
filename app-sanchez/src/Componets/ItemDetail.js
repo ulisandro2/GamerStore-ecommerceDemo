@@ -19,38 +19,74 @@ const ItemDetail = ({producto}) => {
   
 
   return (
- 
+    
+   
 
-   <div className='container' id='detalles'>
-      <h2>{producto.nombre}</h2>
-      <p className='price'>${producto.precio}</p>
-      <div className='grid'>
+   // <div className='container' id='detalles'>
+   //    <h2>{producto.nombre}</h2>
+   //    <p className='price'>${producto.precio}</p>
+   //    <div className='grid'>
       
-       <div className='col'>
-                     {
-                      cantidad ?
-                      <Link to="/Cart" >
-                      <button className='btnCarrito'>Ir al Cart</button>
-                     </Link>
-                      :
-                    <ItemCount initial={1} stock={20} onAdd={onAdd} />  
-                }                 
+   //     <div className='col'>
+   //                   {
+   //                    cantidad ?
+   //                    <Link to="/Cart" >
+   //                    <button className='btnCarrito'>Ir al Cart</button>
+   //                   </Link>
+   //                    :
+   //                  <ItemCount initial={1} stock={20} onAdd={onAdd} />  
+   //              }                 
 
-              </div>
+   //            </div>
        
     
-      </div>
+   //    </div>
       
-      <img src={producto.img}  ></img>
+   //    <img src={producto.img}  ></img>
       
-      <div className='descripcion'>
-         <p>{producto.descripcion}
+   //    <div className='descripcion'>
+   //       <p>{producto.descripcion}
           
-         </p>
-      </div>
-    </div>
+   //       </p>
+   //    </div>
+   //  </div>
 
-                          
+         <>
+          
+             <div className='details'>
+               <div className='big-img'>
+                  <img src={producto.img}/>
+               </div>
+               <div className='box'>
+                  <div className='row'>
+                     <h2>{producto.nombre}</h2>
+                     <span>${producto.precio}</span>
+                  </div>
+                  <p>{producto.descripcion}</p>
+                  
+                  <div className='col'>
+                      {
+                       cantidad ?
+                       <Link to="/Cart" >
+                       <button className='btnCarrito'>Ir al Cart</button>
+                      </Link>
+                       :
+                     <ItemCount initial={1} stock={20} onAdd={onAdd} />  
+                   }                 
+
+              </div>
+                   
+
+               </div>
+             </div>
+        
+         
+         
+         
+         
+         
+         
+         </>              
   )
 }
 
