@@ -3,7 +3,7 @@ import {CartContext} from './CartContext';
 import {Button ,Form} from "react-bootstrap"
 import {Link} from "react-router-dom"
 import CartItem from './CartItem';
-import {addDoc , collection , getFirestore,serverTimestamp} from 'firebase/firestore';
+import {addDoc , collection , getFirestore,} from 'firebase/firestore';
 import Swal from 'sweetalert2';
 import '../Componets/css/StyleCart.css'
 import { MDBRow, MDBTable, MDBTableBody, MDBTableHead } from "mdb-react-ui-kit"
@@ -80,8 +80,8 @@ const Cart = () => {
   } else {
     return (
       <div className='bodyCart'>
-        <h1>Carrito</h1>
-        <MDBRow className='row-cols-1 row-cols-md-4 g-4'>
+        <h1 className='titulo-carrito'>Carrito</h1>
+        <MDBRow id='item-carrito' className='row-cols-1 row-cols-md-4 g-4'>
         {cartList.map((i) => (
           <CartItem key={i.producto.id} producto={i.producto} cantidad={i.cantidad} />
         ))}

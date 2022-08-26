@@ -1,15 +1,15 @@
 import React, { useContext, useState } from 'react'
 import { CartContext, UseCartContext } from './CartContext'
 import '../Componets/css/StyleCart.css'
-import { MDBCard, MDBCardBody,  MDBBtn, } from 'mdb-react-ui-kit'
+import { MDBCardBody,  MDBBtn, } from 'mdb-react-ui-kit'
 
 
 
 
 const CartItem = ({producto, cantidad}) => {
    
-  const {DelItem } = UseCartContext(CartContext)
-  
+  const {DelItem } = UseCartContext()
+  const {id} = producto
  
 
   
@@ -32,7 +32,7 @@ const CartItem = ({producto, cantidad}) => {
                                <p className='cantidadItem'>Precio del producto ${producto.precio}</p>
                                <MDBCardBody>
                                <MDBBtn color='outline-danger'
-                                   onClick={() => DelItem ()}>Delete</MDBBtn>
+                                   onClick={() => DelItem (id)}>Delete</MDBBtn>
                              </MDBCardBody> 
                              
                               

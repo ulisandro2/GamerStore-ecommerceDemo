@@ -64,20 +64,7 @@ const ItemListContainer = () => {
       <>  
    
      
-    {/* <h1 id="tituloCategorias">Filtrado de categorias</h1>
-
-    <div className="container-productos">
-    <ul className="categorias">
-    <Link style={{textDecoration:'none',}} to={`category/perifericos`}> <li>Perifericos</li> </Link>
-    <Link style={{textDecoration:'none',}} to={`category/procesadores`}>  <li>Procesadores</li> </Link>
-    <Link style={{textDecoration:'none',}} to={`category/almacenamiento`}>  <li>Almacenamiento</li> </Link>
-    <Link style={{textDecoration:'none',}} to={`category/placas de video`}>  <li>Placas de video</li> </Link>
-    <Link style={{textDecoration:'none',}} to={`category/ram`}>  <li>Memorias ram </li> </Link>
-    
    
-    </ul>
-   
-    </div> */}
      
    
     <div className="Dropdown">

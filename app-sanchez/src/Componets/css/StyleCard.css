@@ -1,5 +1,7 @@
 .card{
     width: 20rem;
+    margin-top: 30px;
+    
 }
 
 .card:hover{
@@ -30,4 +32,45 @@
 
 .card-img-top:hover{
     transform: scale(1.8);
+}
+
+
+@media screen  and (max-width:850px){
+      
+    .card{
+        width: 15rem;
+        margin-top: 30px;
+        
+    }
+
+}
+
+
+@media screen  and (max-width:770px){
+      
+    .card{
+        width: 25rem;
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        
+    }
+
+}
+
+
+@media screen  and (max-width:400px){
+      
+    .card{
+        width: 17rem;
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        
+    }
+
 }

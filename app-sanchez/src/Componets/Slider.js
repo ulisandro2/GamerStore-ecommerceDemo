@@ -78,7 +78,7 @@ const Slider = () => {
     </div>
 
 
-                           <h1 className='text-center'> Las mejores marcas</h1>
+                           <h1 className='text-card'> Las mejores marcas</h1>
 
 
                             <Cards/>

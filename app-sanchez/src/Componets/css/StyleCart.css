@@ -1,19 +1,25 @@
 .precioTotal{
     font-weight: 600;
-    color: white;
+    color: rgb(19, 17, 17);
 }
 
 .bodyCart{
-    color: rgb(253, 253, 253);
+    color: rgb(10, 10, 10);
    
 }
 
+.titulo-carrito{
+    margin: 20px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
 .precio{
-    color: white;
+    color: rgb(20, 19, 19);
 }
 
 .items{
-    color: white;
+    color: rgb(20, 19, 19);
 }
 
 #tabla{
@@ -52,7 +58,7 @@
 .tituloCart{
     text-align: center;
     margin-top: 20px;
-    color: white;
+    color: rgb(3, 3, 3);
     font-weight: 600;
 }
 
