@@ -8,6 +8,8 @@
    
 }
 
+
+
 .titulo-carrito{
     margin: 20px;
     font-size: 2rem;
@@ -24,6 +26,7 @@
 
 #tabla{
     background-color: aquamarine;
+    margin-top: 20px ;
 }
 
 .btnBorrar{
@@ -60,6 +63,8 @@
     margin-top: 20px;
     color: rgb(3, 3, 3);
     font-weight: 600;
+    padding: 1rem;
+    
 }
 
 .btnCart{

@@ -28,9 +28,9 @@ const CartContextProvider = ({children}) => {
 
   
 
-  const DelItem = (id) => {
-    const items = cartList.filter((producto)=> producto.item.id == id)
-    return setCartList(items)
+  const DelItem =(id) => {
+    const items = cartList.filter((producto) => producto.item.id == id);
+    return setCartList(items);
   }
 
   const IconCart = () => {

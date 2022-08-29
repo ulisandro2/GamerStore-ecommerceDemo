@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import ItemList from "../Componets/ItemList";
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 import '../Componets/css/StyleItemListContainer.css'
-
+import Loading from "../Componets/Loading";
 
 const ItemListContainer = () => {
   const [producto, setProductos] = useState([]);
@@ -57,7 +57,7 @@ const ItemListContainer = () => {
    <div className="body">
      
          
-    {loading ? <h1>Cargando</h1> 
+    {loading ? <Loading/>
     
     :
   

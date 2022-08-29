@@ -30,10 +30,10 @@ const CartItem = ({producto, cantidad}) => {
                                <div className='card-footer'>
                                <p className='precioItem'> Productos seleccionados:  {cantidad} </p>
                                <p className='cantidadItem'>Precio del producto ${producto.precio}</p>
-                               <MDBCardBody>
+                               {/* <MDBCardBody>
                                <MDBBtn color='outline-danger'
                                    onClick={() => DelItem (id)}>Delete</MDBBtn>
-                             </MDBCardBody> 
+                             </MDBCardBody>  */}
                              
                               
                                </div>

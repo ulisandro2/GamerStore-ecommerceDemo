@@ -22,10 +22,10 @@ const NavBar = () => {
     <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-    <Link style={{textDecoration:'none',}} to='/'> <a className="nav-link active " aria-current="page" href="#">Inicio</a>  </Link>
+    <Link style={{textDecoration:'none',}} to='/'> <a className="nav-link active " aria-current="page" >Inicio</a>  </Link>
         </li>
         <li className="nav-item">
-        <Link style={{textDecoration:'none',}} to='/productos'>      <a className="nav-link" href="#">Productos</a> </Link>
+        <Link style={{textDecoration:'none',}} to='/productos'>      <a className="nav-link" >Productos</a> </Link>
         </li>
         
       </ul>

@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
         .then(resp => setProductos ( { id: resp.id, ...resp.data()} ))
         .catch(err => console.log(err))
         .finally(setLoading(false));
-       },[])
+       },[id])
        
   
     return (<>

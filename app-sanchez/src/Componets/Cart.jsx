@@ -155,44 +155,6 @@ const Cart = () => {
     )
   }
 
-  // return (
-  //   <>
-  //   <div>
-  //        {cartList.length < 1 ? (
-  //             <div>
-  //             <h4 className='tituloCart'>No hay productos en el carrito</h4>
-    
-  //             <Link to={"/"} >
-  //               <div className='btnCart'>
-  //               <Button  variant='outline-primary' size='lg' > Ir a tienda </Button>
-  //               </div>
-  //             </Link>
-  //           </div>
-  //         )
-         
-  //        :
-        
-
-  //        (  
-  //        cartList.map((i) =>
-         
-  //        <>
-         
-  //        <CartItem key={i.producto.id} producto={i.producto} cantidad={i.cantidad} />
-  //        </>
-  //        )
-           
-         
-  //        )}
-  //   </div>
-  //    <p className='precioTotal'>Total a pagar ${PriceTotal()}</p>
-     
-  // <button className='btnBorrar' onClick={EmptyCart}>Borrar carrito</button>
-  //   <Link to='/checkout'>
-  //   <button className='btnOrden' onClick={createOrder} >Confirmar orden </button>  
-  //   </Link>
-  //   </>
-  // )
   
 }
       

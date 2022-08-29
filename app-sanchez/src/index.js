@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { getFirestoreApp } from './firebase/config';
+// export {default as Themes} from "./Componets/Theme/Themes"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
