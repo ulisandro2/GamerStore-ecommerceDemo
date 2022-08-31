@@ -6,6 +6,7 @@ import ItemDetail from '../../Componets/ItemDetail'
 import { doc, getDoc, getFirestore } from 'firebase/firestore'
 
 
+
 const ItemDetailContainer = () => {
     const [producto , setProductos] = useState([]);
     const [loading, setLoading] = useState(true);

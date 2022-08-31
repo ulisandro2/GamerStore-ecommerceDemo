@@ -14,14 +14,11 @@ import 'boxicons';
 import Footer from './Componets/Footer';
 import Sponsors from './Componets/Sponsors';
 import styled, {ThemeProvider} from 'styled-components'
- import Themes, { GlobalStyles} from './Componets/Theme/Themes'
+import Themes, { GlobalStyles} from './Componets/Theme/Themes'
 import { Switch } from './Componets';
-import Loading from './Componets/Loading';
-import { Spinner } from 'react-bootstrap';
 
-const StyledApp = styled.div`
 
-`;
+
 
 
 
@@ -35,10 +32,7 @@ function App() {
 
   const [theme , setTheme] = useState('light');
 
-// const themeToggler = () => {
-//   theme === "light" ? setTheme('dark') : setTheme('light');
-// }
-
+ const [Loading , setLoading] = useState(false)
  
   
   return (
@@ -49,8 +43,8 @@ function App() {
      
           <BrowserRouter >
              <NavBar />
-             <Spinner color='dark' />
-           {/* <StyledApp>xfjsdjofidsjfoisod</StyledApp> */}
+             
+           
            <Switch theme={theme} setTheme={setTheme} ></Switch>
             <Routes>
             <Route path='/' element={<Slider/>}/>

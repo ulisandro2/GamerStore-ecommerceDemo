@@ -4,11 +4,13 @@ import { useParams } from "react-router-dom";
 import ItemList from "../Componets/ItemList";
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 import '../Componets/css/StyleItemListContainer.css'
-import Loading from "../Componets/Loading";
+
 
 const ItemListContainer = () => {
   const [producto, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  
 
   const { id } = useParams();
   
@@ -39,11 +41,11 @@ const ItemListContainer = () => {
   const options = [
     <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/perifericos`} > <li>Perifericos</li></Link>,
     <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/procesadores`} > <li>Procesadores</li></Link>,
-    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/perifericos`} > <li>Perifericos</li></Link>,
-    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/perifericos`} > <li>Perifericos</li></Link>,
-    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/perifericos`} > <li>Perifericos</li></Link>,
-    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/perifericos`} > <li>Perifericos</li></Link>,
-    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/perifericos`} > <li>Perifericos</li></Link>,
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/placas de video`} > <li>Placas de video</li></Link>,
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/almacenamiento`} > <li>Almacenamiento </li></Link>,
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/ram`} > <li>Ram</li></Link>,
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/consola`} > <li>Consolas</li></Link>,
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/placas madre`} > <li>Motherboards</li></Link>,
     <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/perifericos`} > <li>Perifericos</li></Link>,
   ]
   
@@ -57,7 +59,7 @@ const ItemListContainer = () => {
    <div className="body">
      
          
-    {loading ? <Loading/>
+    {loading ? <h1>Cargando</h1>
     
     :
   

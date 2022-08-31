@@ -15,7 +15,8 @@ import { createGlobalStyle } from "styled-components";
     text:'#eee',
    toogle:'#0085FF',
    button:'#0085FF',
-   itemBgc:'#080808'
+   itemBgc:'#080808',
+   cardBgc:'#110F0E'
 };
 
 
@@ -99,6 +100,12 @@ h4{
    font-size:1.7rem;
    padding:0.6rem;
    font-weight:700;
+}
+
+
+
+#card-bgc{
+   background-color: ${(props)=> props.theme.cardBgc};
 }
 
 
