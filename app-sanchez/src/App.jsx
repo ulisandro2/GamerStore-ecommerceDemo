@@ -1,7 +1,6 @@
 import React ,{ useState} from 'react';
 import { BrowserRouter, Routes ,Route, Navigate } from 'react-router-dom';
 import './App.css';
-import '../src/sass/app.scss'
 import NavBar from './Componets/NavBar'
 import ItemListContainer from './Containers/ItemListContainer'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,30 +12,17 @@ import Slider from './Componets/Slider';
 import 'boxicons';
 import Footer from './Componets/Footer';
 import Sponsors from './Componets/Sponsors';
-import styled, {ThemeProvider} from 'styled-components'
+import {ThemeProvider} from 'styled-components'
 import Themes, { GlobalStyles} from './Componets/Theme/Themes'
 import { Switch } from './Componets';
-
-
-
-
-
-
-
-
-
-
-
 
 function App() {
 
   const [theme , setTheme] = useState('light');
-
- const [Loading , setLoading] = useState(false)
  
   
   return (
-    <div >
+    <div>
       <ThemeProvider theme={Themes[theme]}>
       <GlobalStyles/> 
       <CartContextProvider>
@@ -45,22 +31,24 @@ function App() {
              <NavBar />
              
            
-           <Switch theme={theme} setTheme={setTheme} ></Switch>
+           {/* <Switch theme={theme} setTheme={setTheme} ></Switch> */}
             <Routes>
-            <Route path='/' element={<Slider/>}/>
-           
-            <Route path='productos' element={<ItemListContainer/>}>
+              {/* HOME */}
+             <Route path='/' element={<Slider/>}/>
+             {/* PRODUCTS  */}
+             <Route path='productos' element={<ItemListContainer/>}>
              <Route path='category/:id' element={<ItemListContainer/>}  />
-             
-          </Route>
-            
+             </Route>
+            {/* DETAIL */}
              <Route path='/detalle/:id' element={<ItemDetailContainer/>} />
+             {/* CART */}
              <Route path='/cart' element={<Cart/>} />
              <Route path='*' element={<Navigate to='/' />} />
+             
              </Routes>
-             
+             {/* SPONSORS */}
              <Sponsors/>
-             
+             {/* FOOTER */}
              <Footer/>
           
           </BrowserRouter>

@@ -6,6 +6,7 @@ import { collection, getDocs, getFirestore, query, where } from 'firebase/firest
 import '../Componets/css/StyleItemListContainer.css'
 
 
+
 const ItemListContainer = () => {
   const [producto, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -58,17 +59,6 @@ const ItemListContainer = () => {
    
    <div className="body">
      
-         
-    {loading ? <h1>Cargando</h1>
-    
-    :
-  
-      <>  
-   
-     
-   
-     
-   
     <div className="Dropdown">
       <div className="dropdown-btn" onClick={(e)=> setIsActive(!isActive)}>
         
@@ -100,15 +90,9 @@ const ItemListContainer = () => {
    
    
    
-   <ItemList producto={producto} />
+   <ItemList producto={producto} /> 
 
-     
-     
-     </>}
-
-     
-     
-     </div>
+  </div>
   );
 };
 
