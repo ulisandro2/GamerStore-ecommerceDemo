@@ -29,6 +29,13 @@ function App() {
      
           <BrowserRouter >
              <NavBar />
+             <br/>
+             <br/>
+             <br/>
+             <br/>
+             <br/>
+             <br/>
+             <br/>
              
            
            {/* <Switch theme={theme} setTheme={setTheme} ></Switch> */}
