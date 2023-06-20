@@ -36,9 +36,7 @@ const Sponsors = () => {
                           <div className='slide'>
                             <img alt='foto' src={ASRock}></img>
                           </div>
-                          <div className='slide'>
-                            <img alt='foto' src={Kolink}></img>
-                          </div>
+                          
                           <div className='slide'>
                             <img alt='foto' src={Razer}></img>
                           </div>

@@ -1,10 +1,14 @@
-
-import portada from './imagenes/iniciologitech.gif'
+import portada from './imgPng/banner3.jpg'
+import banner from './imgPng/WEBBANNER.png'
+import banner2 from './imgPng/BANNERGAMING2.jpg'
 import './css/StyleSlider.css'
-import { BsChevronLeft } from 'react-icons/bs';
-import { BsChevronRight } from 'react-icons/bs';
 import { Link } from 'react-router-dom'
 import Cards from './Cards';
+import { MDBAccordion, MDBAccordionItem } from 'mdb-react-ui-kit';
+import {BsMouse3Fill , BsMemory,BsCpuFill,BsGpuCard,BsMotherboard,BsPcDisplayHorizontal} from 'react-icons/bs'
+import {CiFloppyDisk} from 'react-icons/ci'
+import {GiGameConsole,GiPowerGenerator} from 'react-icons/gi'
+import {FiMonitor} from 'react-icons/fi'
 
 
 
@@ -18,37 +22,11 @@ const Slider = () => {
 
 
 
-
-  const slides = [
-           {imagen: 'https://firebasestorage.googleapis.com/v0/b/gamerstore-ecommerce.appspot.com/o/i3.png?alt=media&token=3f0fa42a-c2d8-4da2-a641-59f4f19a3442'  , title:'Procesador Intel Core i3-10105  de 4 núcleos ', price: 23000},
-           {imagen: 'https://firebasestorage.googleapis.com/v0/b/gamerstore-ecommerce.appspot.com/o/ram%2016gb.png?alt=media&token=2caf0036-ebc7-4849-9605-dfe8f5c0fe58'  , title:'Memoria RAM Fury Beast DDR4 gamer 16GB', price: 12000},
-           {imagen: 'https://firebasestorage.googleapis.com/v0/b/gamerstore-ecommerce.appspot.com/o/log-gpro_21-501e073f6aca5f549015941547535680-1024-1024.png?alt=media&token=2d3c1496-e0ff-493f-8862-febc455c931f'  , title:'Teclado gamer Logitech Serie Pro G Pro', price: 15000},
-           {imagen: 'https://firebasestorage.googleapis.com/v0/b/gamerstore-ecommerce.appspot.com/o/ODDkagq1vJm7Vb0w_setting_xxx_0_90_end_2000.png?alt=media&token=fb43c8a7-0582-4bac-b609-db0af6e54774'  , title:'Nvidia MSI Ventus GeForce RTX 20 Series ', price: 40500},
-           {imagen: 'https://firebasestorage.googleapis.com/v0/b/gamerstore-ecommerce.appspot.com/o/ssd%201t.png?alt=media&token=7f12b2aa-39ac-4ab2-ad2d-4b5a35d2154c'  , title:'Disco Solido Ssd  128gb Sata 6gb 500mb/s Pc', price: 3400},
-           {imagen: 'https://firebasestorage.googleapis.com/v0/b/gamerstore-ecommerce.appspot.com/o/ram%204gb.png?alt=media&token=aec4b879-61b7-4fea-b252-7ba2781f669a'  , title:'Memoria RAM ValueRAM color verde 4GB', price: 3500},
-           {imagen: 'https://firebasestorage.googleapis.com/v0/b/gamerstore-ecommerce.appspot.com/o/g203-lilac-gallery-1.png?alt=media&token=5e544da3-2c07-4933-a978-050d0795cdcf'  , title:'Logitech G Series Lightsync G203', price: 4500},
-           {imagen: 'https://firebasestorage.googleapis.com/v0/b/gamerstore-ecommerce.appspot.com/o/1645212338_1.png?alt=media&token=9f9a03ac-37c1-48ce-b123-635d7cc6e04c'  , title:'AMD ASRock Phantom Gaming RX 500', price: 43000},
-          
-
-
-  ]
-
-  const slideLeft = () =>{
-    let slider = document.getElementById('slider')
-    slider.scrollLeft = slider.scrollLeft + 500;
-  }
-
-  const slideRight = () =>{
-    let slider = document.getElementById('slider')
-    slider.scrollLeft = slider.scrollLeft - 500;
-    
-  }
-
   return (
     <>
      
     <div>
-      <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
+      <div id="carouselExampleIndicators" className="carousel slide fondo"  data-bs-ride="carousel">
         <div className="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -56,13 +34,13 @@ const Slider = () => {
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active">
-          <Link to='/productos'>   <img src={portada} className="d-block w-100" alt="..." /></Link>   
+          <Link to='/productos'>   <img src={portada} id='fondo' className="d-block w-100" alt="..." /></Link>   
           </div>
           <div className="carousel-item">
-            <img src={portada} className="d-block w-100" alt="..." />
+            <img src={banner} className="d-block w-100" alt="..." />
           </div>
           <div className="carousel-item">
-            <img src={portada} className="d-block w-100" alt="..." />
+            <img src={banner2} className="d-block w-100" alt="..." />
           </div>
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -78,42 +56,153 @@ const Slider = () => {
     </div>
 
 
-                           <h1 className='text-card'> Las mejores marcas</h1>
+      <h1 className='text-card'> Las mejores marcas</h1>
+                     
+
+                     <Cards/>
 
 
-                            <Cards/>
- 
-
-
-
-             
-
-
-                             <h1 id='tituloSlider'>Productos Destacados </h1>
-    
-                   <div id='main-slider-container'>
-                   
-                   <BsChevronLeft size={40} className='slider-icon left' onClick={slideRight} />
-                   <div id='slider'>
-                         {
-                         slides.map((slide, index)=>{
-                             return(
-                              
-                                <div className='slider-card' key={index}> 
-                               <Link to='/productos'>
-                                      <div id='slider-card-image'  style={{backgroundImage:`url(${slide.imagen})`}}></div> </Link> 
-                                      <div className='slider-card-title'>{slide.title}</div>
-                                      <div className='slider-card-price'>${slide.price}</div>
-                                </div>
-                                
-                             )
-                         })
-                         }
+          <section className='categories'>
+            <div className='cont'>
+              <h2>Que estas buscando?</h2>
+              <div className='cats'>
+                <div className='colum'>
+                 <Link style={{textDecoration:'none', listStyle:"none"}} to='/productos'>
+                    <div className='cat'>
+                      <div className='svg-icon'>
+                          <span> <BsMouse3Fill/></span> 
+                      </div>
+                      <div className='svg-text'>Perifericos</div>
                     </div>
-                    <BsChevronRight size={40} className='slider-icon right' onClick={slideLeft} />
-                    
-                   </div>
+                  </Link>
+                  <Link style={{textDecoration:'none', listStyle:"none"}} to='/productos'>
+                    <div className='cat'>
+                      <div className='svg-icon'>
+                         <BsCpuFill/>
+                      </div>
+                      <div className='svg-text'>Procesadores</div>
+                    </div>
+                  </Link>   
+               </div>
+               <div className='colum'>
+                 <Link style={{textDecoration:'none', listStyle:"none"}} to='/productos'>
+                    <div className='cat'>
+                      <div className='svg-icon'>
+                         <CiFloppyDisk/>
+                      </div>
+                      <div className='svg-text'>Almacenamiento</div>
+                    </div>
+                  </Link>
+                  <Link style={{textDecoration:'none', listStyle:"none"}} to='/productos'>
+                    <div className='cat'>
+                      <div className='svg-icon'>
+                      <BsMemory/>
+                      </div>
+                      <div className='svg-text'>Memoria Ram</div>
+                    </div>
+                  </Link>   
+               </div>
+               <div className='colum'>
+                 <Link style={{textDecoration:'none', listStyle:"none"}} to='/productos'>
+                    <div className='cat'>
+                      <div className='svg-icon'>
+                         <BsGpuCard/>
+                      </div>
+                      <div className='svg-text'>Placas De video</div>
+                    </div>
+                  </Link>
+                  <Link style={{textDecoration:'none', listStyle:"none"}} to='/productos'>
+                    <div className='cat'>
+                      <div className='svg-icon'>
+                         <GiGameConsole/>
+                      </div>
+                      <div className='svg-text'>Consolas</div>
+                    </div>
+                  </Link>   
+               </div>
+               <div className='colum'>
+                 <Link style={{textDecoration:'none', listStyle:"none"}} to='/productos'>
+                    <div className='cat'>
+                      <div className='svg-icon'>
+                         <BsMotherboard/>
+                      </div>
+                      <div className='svg-text'>Motherboards</div>
+                    </div>
+                  </Link>
+                  <Link style={{textDecoration:'none', listStyle:"none"}} to='/productos'>
+                    <div className='cat'>
+                      <div className='svg-icon'>
+                         <FiMonitor/>
+                      </div>
+                      <div className='svg-text'>Monitores</div>
+                    </div>
+                  </Link>   
+               </div>
+               <div className='colum'>
+                 <Link style={{textDecoration:'none', listStyle:"none"}} to='/productos'>
+                    <div className='cat'>
+                      <div className='svg-icon'>
+                         <GiPowerGenerator/>
+                      </div>
+                      <div className='svg-text'>Fuentes</div>
+                    </div>
+                  </Link>
+                  <Link style={{textDecoration:'none', listStyle:"none"}} to='/productos'>
+                    <div className='cat'>
+                      <div className='svg-icon'>
+                         <BsPcDisplayHorizontal/>
+                      </div>
+                      <div className='svg-text'>Nootebooks</div>
+                    </div>
+                  </Link>   
+               </div>
+               
+              </div>
+            </div>
+          </section>
 
+
+
+          
+          <div className='text-about'>
+              <h1 className='titleAbout'>About</h1>
+              <p className='text-p'>Nuestra empresa fue fundada en el año 20XX con el objetivo de ofrecer a los amantes de los videojuegos los mejores productos y servicios del mercado. Desde el principio, nos enfocamos en ofrecer hardware de última generación y periféricos de alta calidad para mejorar la experiencia de juego de nuestros clientes.
+
+En el año 20YY abrimos nuestro primer local en Argentina y rápidamente nos convertimos en un referente en el mercado local gracias a nuestra amplia selección de productos y nuestro compromiso con la satisfacción del cliente. Nuestros clientes valoraban nuestra atención personalizada y nuestra capacidad para ofrecerles las últimas novedades en el mundo gamer.
+
+Con el tiempo, fuimos expandiendo nuestra presencia en otros países de la región y nuestra marca se convirtió en sinónimo de calidad y excelencia. Nuestros productos más populares incluyen [nombre del producto], [nombre del producto] y [nombre del producto], que han evolucionado a lo largo del tiempo para adaptarse a las necesidades cambiantes de nuestros clientes.
+
+En el año 20ZZ recibimos el premio [nombre del premio] por nuestra excelencia en el servicio al cliente y nuestra capacidad para ofrecer productos innovadores y de alta calidad. Este reconocimiento nos llenó de orgullo y nos motivó a seguir trabajando duro para mantenernos a la vanguardia del mercado gamer.
+
+Hoy en día, seguimos comprometidos con nuestra misión de ofrecer a nuestros clientes los mejores productos gamer del mercado. Seguimos expandiéndonos y mejorando cada día para brindar una experiencia única a todos aquellos que comparten nuestra pasión por los videojuegos.
+              </p>
+              <h2 className='title2'>Preguntas Frecuentes</h2>
+              <MDBAccordion flush initialActive={1}>
+      <MDBAccordionItem collapseId={1} headerTitle='Que pasa si me llega un producto dañado?'>
+       Si un producto le llego golpeado, dañado o defectuoso no se preocupe!! Todos nuestros productos tienen garantia de 2 años , en caso de tener un producto defectuoso 
+       simplemente contacte con el siguiete mail(GamerStoreContact@gmail.com) e informe el producto y la informacion , y un agente nuestro lo estara contactando con usted para resolver su problema.
+      </MDBAccordionItem>
+      <MDBAccordionItem collapseId={2} headerTitle='Accordion Item #2'>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+        moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+        Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+        shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+        proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
+        aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </MDBAccordionItem>
+      <MDBAccordionItem collapseId={3} headerTitle='Accordion Item #3'>
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
+        moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
+        Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+        shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
+        proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
+        aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </MDBAccordionItem>
+    </MDBAccordion>
+         </div>
+
+     <h1 className='titleSlider'>Todas las marcas </h1>
+    
 
 
                

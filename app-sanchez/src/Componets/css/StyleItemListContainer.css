@@ -1,11 +1,4 @@
 
-.body{
-    background-color: rgb(229, 231, 231);
-    margin-left: 80px;
-    margin-top: 30px;
-    max-width: 90%;
-    box-shadow: 0 0 10px rgb(182, 179, 179);
-}
 
 
 
@@ -13,8 +6,8 @@
     width: 350px;
     position: absolute;
     user-select: none;
-    margin-top: 20px;
-    margin-left: 10px;
+    margin-left: 30px;
+    z-index: 98;
     
 }
 
@@ -67,23 +60,7 @@
 
 }
 
-@media screen and (max-width:420px) {
-    
-    .Dropdown{
-        width: 250px;
-        position: relative;
-        user-select: none;
-        padding-top: 30px; ;
-        
-        
-    }
 
-    .body{
-        background-color: rgb(229, 231, 231);
-        margin-left: 30px;
-        margin-top: 30px;
-        max-width: 100%;
-        box-shadow: 0 0 10px rgb(182, 179, 179);
-    }
 
-}
+
+

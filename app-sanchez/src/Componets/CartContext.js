@@ -7,6 +7,7 @@ const CartContextProvider = ({children}) => {
          
   const [cartList , setCartList] = useState([])
   const [count , setCount] = useState(1)
+  const [like , setLike] =useState([])
 
   
   const AddToCart = (cantidad , producto) =>{
@@ -26,10 +27,38 @@ const CartContextProvider = ({children}) => {
            setCartList(auxCart) 
   };
 
+ 
+// const AddToLike = (producto) => {
+//       if(IsInLike(producto.id)){
+//         setLike(like.map(producto=>{
+//           return producto.id === producto.id ? {...producto} : producto
+//         }))
+
+//       }else{
+//         setLike([...like,{...producto}])
+//       }
+// }
+
+const AddToLike = ( producto) =>{
+            
+  let item = {producto};
+  let auxCart= [];
+
+   
+      if(IsInLike(producto.id)){
+         item = cartList.find(e => e.producto.id === producto.id);
+         
+         auxCart = [...cartList];
+      }else{
+         auxCart = [item, ...cartList];
+      }
+
+     setLike(auxCart) 
+};
   
 
   const DelItem =(id) => {
-    const items = cartList.filter((producto) => producto.item.id == id);
+    const items = cartList.filter((producto) => producto.id == id);
     return setCartList(items);
   }
 
@@ -41,6 +70,11 @@ const CartContextProvider = ({children}) => {
     return cartList.reduce((acum,i)=> acum + i.cantidad * i.producto.precio,0)
   }
 
+ const IsInLike = (id) => {
+  return like&&like.some((i)=> i.producto.id === id)
+ }
+
+
   const IsInCart = (id) =>{
     return cartList&&cartList.some((i)=> i.producto.id  === id)
   }
@@ -49,13 +83,9 @@ const CartContextProvider = ({children}) => {
     setCartList([])
   }
 
-  const value = {
-    AddToCart:AddToCart,
-    cartList: [cartList,setCartList]
-  }
-
+  
     return(
-        <CartContext.Provider value={{value,AddToCart,cartList,EmptyCart,setCount, PriceTotal,IconCart,DelItem,count}}>
+        <CartContext.Provider value={{AddToCart,cartList,EmptyCart,setCount, PriceTotal,IconCart,DelItem,count,AddToLike,like}}>
             {children}
         </CartContext.Provider>
     )

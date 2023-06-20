@@ -28,7 +28,8 @@ const NavBar = () => {
         <Link style={{textDecoration:'none'}} to='/'><li className='link'>Home</li></Link> 
         <Link style={{textDecoration:'none'}} to='/productos'><li className='link'>Products</li></Link>    
         <Link style={{textDecoration:'none'}} to='/'><li className='link'>About</li></Link>    
-        <Link style={{textDecoration:'none'}} to='/cart'><li className='link-cart'>Cart</li></Link>    
+        <Link style={{textDecoration:'none'}} to='/cart'><li className='link-cart'>Cart</li></Link>
+           
            </ul>
          </nav>
   

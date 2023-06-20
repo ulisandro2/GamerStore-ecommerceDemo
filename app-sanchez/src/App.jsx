@@ -16,6 +16,9 @@ import {ThemeProvider} from 'styled-components'
 import Themes, { GlobalStyles} from './Componets/Theme/Themes'
 import { Switch } from './Componets';
 
+import LikeContainer from './Componets/LikeContainer';
+
+
 function App() {
 
   const [theme , setTheme] = useState('light');
@@ -45,11 +48,14 @@ function App() {
              {/* PRODUCTS  */}
              <Route path='productos' element={<ItemListContainer/>}>
              <Route path='category/:id' element={<ItemListContainer/>}  />
+             
              </Route>
             {/* DETAIL */}
              <Route path='/detalle/:id' element={<ItemDetailContainer/>} />
              {/* CART */}
              <Route path='/cart' element={<Cart/>} />
+             <Route path='/like' element={<LikeContainer/>} />
+
              <Route path='*' element={<Navigate to='/' />} />
              
              </Routes>

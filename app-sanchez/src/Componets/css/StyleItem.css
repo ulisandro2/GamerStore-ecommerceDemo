@@ -6,12 +6,9 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    
     box-sizing: border-box;
     
-    
-    
-  }
+ }
 
   .producto{
     display: flex;
@@ -206,5 +203,11 @@
       margin-left: 80px;
       padding: 0 1rem;
       margin: 1rem;
+   
+   
     }
   }
+
+  
+
+  

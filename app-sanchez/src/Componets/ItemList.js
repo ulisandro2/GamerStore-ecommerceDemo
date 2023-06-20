@@ -1,21 +1,36 @@
 import React from "react"
 import Item from "./Item"
+import styled from "styled-components"
 
 
 const ItemList = ({producto }) => {
+
+ 
+
+
     return (
         
-         <div className="container">
-             <div className="row">
-             {producto.map((producto)=> (
-                <div className="row-md-6">
-                <Item producto={producto}/> 
-              </div>
+         
+             <Container >
+               {producto.map((producto)=> (
+             
+                <Item key={producto.id} producto={producto}/> 
+              
               )
             )}
-           </div> 
-        </div>
+           </Container> 
+        
     )
 }
+
+const Container=styled.div`
+
+    display: flex;
+justify-content: center;
+ align-items: center;
+ margin-top: 20px;
+ text-align:center ;
+ flex-wrap: wrap;
+`
 
 export default ItemList

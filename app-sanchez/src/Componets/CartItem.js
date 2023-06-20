@@ -1,46 +1,51 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
 import { CartContext, UseCartContext } from './CartContext'
 import '../Componets/css/StyleCart.css'
-import { MDBCardBody,  MDBBtn, } from 'mdb-react-ui-kit'
+import styled from 'styled-components'
+import axios from 'axios'
+
+
 
 
 
 
 const CartItem = ({producto, cantidad}) => {
    
-  const {DelItem } = UseCartContext()
-  const {id} = producto
+  const {DelItem} = UseCartContext(CartContext)
+  
+
  
 
   
  
   return (
-    <div className='col-md-4 p-1'
-                        key={producto.id}
-                       >
-                           <div className='card w-100 mt-5'>
-                               <div id='tituloItem' className='card-header'>
-                                   {`${producto.nombre} `}
-                               </div>
-                               <div className='card-body'>
-                               <img src={producto.img} width='200px' height='150px' ></img>
-                              
-                                   
-                               </div>
-                               <div className='card-footer'>
-                               <p className='precioItem'> Productos seleccionados:  {cantidad} </p>
-                               <p className='cantidadItem'>Precio del producto ${producto.precio}</p>
-                               {/* <MDBCardBody>
-                               <MDBBtn color='outline-danger'
-                                   onClick={() => DelItem (id)}>Delete</MDBBtn>
-                             </MDBCardBody>  */}
-                             
-                              
-                               </div>
-                            </div>
-                               
-                         </div>
+    <Container>
+            <div className='cartItem'>
+              <img src={producto.img}/>
+              <div className='description'>
+                   <p className='product-name'>
+                    <b>{producto.name}</b>
+                   </p>
+                   <p className='price'>${producto.precio}</p>
+                   <div className='count'>
+                    <p className='count-title'>Productos selecionados: {cantidad}</p>
+                   </div>
+               </div>
+            </div>
+   
+ 
+ 
+
+    </Container>
   )
 }
+
+const Container =styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`
+
 
 export default CartItem

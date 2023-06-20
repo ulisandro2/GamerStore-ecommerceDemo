@@ -1,13 +1,18 @@
-import React, { useState , useContext, useEffect} from 'react'
-import { Link, useParams } from 'react-router-dom'
+import React, { useState , useContext} from 'react'
+import { Link } from 'react-router-dom'
 import { CartContext } from './CartContext'
 import ItemCount from './ItemCount'
 import '../Componets/css/StyleItemDetail.css'
 
+
+import styled from 'styled-components'
+// import ItemLike from './ItemLike'
+
 const ItemDetail = ({producto}) => {
    
    const[cantidad , setCantidad] = useState();
-   const {AddToCart} = useContext(CartContext);
+   // const [goTolike , setGoToLike] = useState();
+   const {AddToCart , AddToLike} = useContext(CartContext);
   
 
   const onAdd = (cantidad) =>{
@@ -15,45 +20,20 @@ const ItemDetail = ({producto}) => {
      AddToCart(cantidad , producto);
   }
 
+
+//   const onLike = ()=>{
+//     setGoToLike(producto)
+//     AddToLike(producto,goTolike)
+//   }
   
-  
+
 
   return (
-    
-   
-
-   // <div className='container' id='detalles'>
-   //    <h2>{producto.nombre}</h2>
-   //    <p className='price'>${producto.precio}</p>
-   //    <div className='grid'>
-      
-   //     <div className='col'>
-   //                   {
-   //                    cantidad ?
-   //                    <Link to="/Cart" >
-   //                    <button className='btnCarrito'>Ir al Cart</button>
-   //                   </Link>
-   //                    :
-   //                  <ItemCount initial={1} stock={20} onAdd={onAdd} />  
-   //              }                 
-
-   //            </div>
-       
-    
-   //    </div>
-      
-   //    <img src={producto.img}  ></img>
-      
-   //    <div className='descripcion'>
-   //       <p>{producto.descripcion}
-          
-   //       </p>
-   //    </div>
-   //  </div>
-
-         <>
+      <Container>
           
              <div className='details'>
+             {/* <ItemLike onLike={onLike}>
+            </ItemLike> */}
                <div className='big-img'>
                   <img src={producto.img}/>
                </div>
@@ -62,16 +42,16 @@ const ItemDetail = ({producto}) => {
                      <h2>{producto.nombre}</h2>
                      <span>${producto.precio}</span>
                   </div>
-                  <p>{producto.descripcion}</p>
+                  <p className='description'>{producto.descripcion}</p>
                   
                   <div className='col'>
                       {
                        cantidad ?
                        <Link to="/Cart" >
-                       <button className='btnCarrito'>Ir al Cart</button>
+                       <button className='btnCart2'>Ir al Cart</button>
                       </Link>
                        :
-                     <ItemCount initial={1} stock={20} onAdd={onAdd} />  
+                       <ItemCount initial={1} stock={20} onAdd={onAdd} />  
                    }                 
 
               </div>
@@ -86,8 +66,31 @@ const ItemDetail = ({producto}) => {
          
          
          
-         </>              
+         </Container>              
   )
 }
 
+
+const Container=styled.div`
+ 
+.icon{
+   cursor: pointer;
+}
+
+.btnIcon{
+   background-color:black;
+   border: none;
+   width: 40px;
+   height: 40px;
+   border-radius:10px ;
+}
+
+.btnIcon:hover{
+   background-color: rgb(0.40,0,0,0.70);
+}
+
+
+
+
+`
 export default ItemDetail

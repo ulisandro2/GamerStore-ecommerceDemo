@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from "react";
-import {  Link} from "react-router-dom";
-import { useParams } from "react-router-dom";
+
+import { useParams,Link } from "react-router-dom";
 import ItemList from "../Componets/ItemList";
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 import '../Componets/css/StyleItemListContainer.css'
 
 
 
+
+
 const ItemListContainer = () => {
+ 
+ 
+ 
   const [producto, setProductos] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  
-
   const { id } = useParams();
+
   
 
   useEffect(() => {
@@ -29,10 +31,8 @@ const ItemListContainer = () => {
         setProductos(resp.docs.map((item) => ({ id: item.id, ...item.data() })))
       )
       .catch((err) => console.log(err))
-      .finally(setLoading(false));
+      .finally();
   }, [id]);
-
-
 
   const [isActive, setIsActive] = useState(false);
   
@@ -49,8 +49,10 @@ const ItemListContainer = () => {
     <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/placas madre`} > <li>Motherboards</li></Link>,
     <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/perifericos`} > <li>Perifericos</li></Link>,
   ]
-  
 
+
+
+ 
   
   return (
    
@@ -58,8 +60,8 @@ const ItemListContainer = () => {
    
    
    <div className="body">
-     
-    <div className="Dropdown">
+
+<div className="Dropdown">
       <div className="dropdown-btn" onClick={(e)=> setIsActive(!isActive)}>
         
       Categorias:        
@@ -84,15 +86,11 @@ const ItemListContainer = () => {
         </div>    
       )}
     </div>
-   
 
-   
-   
-   
-   
+
    <ItemList producto={producto} /> 
-
-  </div>
+   
+   </div>
   );
 };
 
