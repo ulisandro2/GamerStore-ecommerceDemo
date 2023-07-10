@@ -2,8 +2,8 @@
 
   "scripts": {
 
-    "start": "node backend/index.js",
-    "build": "cd app-sanchez && npm install && npm run build"
+    "start": "node backend/index.js"
+    
 
   },
   "engines": {
