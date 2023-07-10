@@ -4,7 +4,7 @@ import { useParams,Link } from "react-router-dom";
 import ItemList from "../Componets/ItemList";
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore'
 import '../Componets/css/StyleItemListContainer.css'
-
+import {IoIosArrowDown} from 'react-icons/io'
 
 
 
@@ -13,7 +13,7 @@ const ItemListContainer = () => {
  
  
  
-  const [producto, setProductos] = useState([]);
+  const [product, setProducts] = useState([]);
   const { id } = useParams();
 
   
@@ -24,11 +24,11 @@ const ItemListContainer = () => {
 
     getDocs(
       id
-        ? query(queryCollection, where("categoria" , "==", id)) // ** aquellos que coincidan )
+        ? query(queryCollection, where("category" , "==", id)) // ** aquellos que coincidan )
         : queryCollection
     )
       .then((resp) =>
-        setProductos(resp.docs.map((item) => ({ id: item.id, ...item.data() })))
+        setProducts(resp.docs.map((item) => ({ id: item.id, ...item.data() })))
       )
       .catch((err) => console.log(err))
       .finally();
@@ -40,14 +40,16 @@ const ItemListContainer = () => {
 
 
   const options = [
-    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/perifericos`} > <li>Perifericos</li></Link>,
-    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/procesadores`} > <li>Procesadores</li></Link>,
-    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/placas de video`} > <li>Placas de video</li></Link>,
-    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/almacenamiento`} > <li>Almacenamiento </li></Link>,
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`/products`} > <li>All</li></Link>,
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/keyboards`} > <li>Keyboards</li></Link>,
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/processors`} > <li>Processors</li></Link>,
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/video boards`} > <li>Video Boards</li></Link>,
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/storage`} > <li>Storage </li></Link>,
     <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/ram`} > <li>Ram</li></Link>,
-    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/consola`} > <li>Consolas</li></Link>,
-    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/placas madre`} > <li>Motherboards</li></Link>,
-    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/perifericos`} > <li>Perifericos</li></Link>,
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/console`} > <li>Consoles</li></Link>,
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/motherboards`} > <li>Motherboards</li></Link>,
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/mouses`} > <li>Mouses</li></Link>,
+    <Link style={{textDecoration:'none', listStyle:"none"}} to={`category/headphones`} > <li>Headphones</li></Link>,
   ]
 
 
@@ -64,9 +66,9 @@ const ItemListContainer = () => {
 <div className="Dropdown">
       <div className="dropdown-btn" onClick={(e)=> setIsActive(!isActive)}>
         
-      Categorias:        
+      Categories:        
       {selected}
-      <box-icon name='caret-down' ></box-icon>
+      <IoIosArrowDown/>
       
       </div>
       {isActive && (    
@@ -88,7 +90,7 @@ const ItemListContainer = () => {
     </div>
 
 
-   <ItemList producto={producto} /> 
+   <ItemList product={product} /> 
    
    </div>
   );

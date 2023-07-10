@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 
 
-const Item = ({producto}) =>  {
+const Item = ({product}) =>  {
 
     
 
@@ -15,56 +15,18 @@ const Item = ({producto}) =>  {
 
     return(
          <Container>
-      {/* <div className="productos">
-                <div className='producto'>
-
-                    <div className="producto-imagen">
-                        <img alt="producto" src={producto.img}></img>
-                    </div>
-
-                    <div className="producto-footer">
-                        <h1>{producto.nombre} </h1>
-                        <p>{producto.categoria}</p>
-                        <p className="price">${producto.precio}</p>
-                    </div>
-                    <div className="buttom">
-                        <Link to={`/detalle/${producto.id}`}>
-                            <button className="btn">
-                                Detalle
-                            </button>
-                        </Link>
-
-                    </div>
-                </div>
-            </div>  */}
-
-            {/* <div className='container-items'>
-			
-				<div className='item' key={producto.id}>
-					<figure>
-						<img src={producto.img}  />
-					</figure>
-					<div className='info-product'>
-						<h2>{producto.nombre}</h2>
-						<p className='price'>${producto.precio}</p>
-						<button>
-							Añadir al carrito
-						</button>
-					</div>
-				</div>
-		
-		</div> */}
+    
 
 
         <div className='wrapper'>
           <div className='card'>
-            <img src={producto.img} alt="" className='card-img'/>
-            <div className='card-body'>
-              <h2 className='card-title'>{producto.name}</h2>
+            <img src={product.img} alt="" className='card-img'/>
+            <div className='card-bodys'>
+              <h2 className='card-title'>{product.name}</h2>
               {/* <p className='card-description'>{producto.categoria}</p> */}
-              <h3 className='card-price'>{producto.precio}</h3>
-              <Link style={{textDecoration:'none', listStyle:"none"}} to={`/detalle/${producto.id}`} >
-              <button  className='card-btn'>Detalle</button>
+              <h3 className='card-price'>{product.price}</h3>
+              <Link style={{textDecoration:'none', listStyle:"none"}} to={`/detail/${product.id}`} >
+              <button  className='card-btn'>Detail</button>
               </Link>
             </div>
           </div>
@@ -102,6 +64,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   
+  
+  
 }
 
 .card-img{
@@ -110,9 +74,10 @@ const Container = styled.div`
   object-fit: cover;
 
 }
-.card-body{
+.card-bodys{
   margin: 0.4rem;
   flex-grow:1;
+  
 
 }
 
@@ -136,6 +101,8 @@ const Container = styled.div`
   cursor: pointer;
   text-decoration: none;
   list-style: none;
+
+  
 }
 
 .card-title{
@@ -179,6 +146,7 @@ const Container = styled.div`
   margin-top: 60px;
   margin-left: 20px;
   height: 700px;
+ 
   
 }
 .card:hover{
@@ -198,16 +166,16 @@ const Container = styled.div`
 .card-img:hover{
 	transform: scale(1.1);
 }
-.card-body{
+.card-bodys{
   margin: 3rem;
   flex-grow:1;
 
 }
 
-.card-body button{
+.card-bodys button{
 	border: none;
-	background: none;
-	background-color: #000;
+	
+	background-color: #7F37C9;
 	color: #fff;
 	padding: 15px 10px;
 	cursor: pointer;
@@ -222,7 +190,7 @@ const Container = styled.div`
 
 .card-btn{
     border: none;
-	background-color: #000;
+	
 	color: #fff;
 	padding: 15px 0;
 	display: block;

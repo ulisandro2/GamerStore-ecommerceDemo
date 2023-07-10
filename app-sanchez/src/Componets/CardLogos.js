@@ -20,7 +20,7 @@ const CardLogos = (props) => {
             <p id='card-descripcion' className='card-text text-secondary'>
                 {props.description}
             </p>
-        <Link to='/productos' >  <a href='#' className='btn btn-outline-success' >Ver productos</a> </Link>
+        <Link to='/products' > <button className='btnCard'>  View products</button> </Link>
         </div>
     </div>
   )

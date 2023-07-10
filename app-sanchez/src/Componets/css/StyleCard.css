@@ -34,6 +34,19 @@
     transform: scale(1.8);
 }
 
+.btnCard{
+    background: none;
+    border-radius: 10px;
+    padding: 10px;
+    border: solid 1px #7f37c9;
+    color: #030303;
+    font-weight: 500;
+}
+
+.btnCard:hover{
+    background-color: #c99af8;
+}
+
 
 @media screen  and (max-width:850px){
       

@@ -10,15 +10,15 @@ const CartContextProvider = ({children}) => {
   const [like , setLike] =useState([])
 
   
-  const AddToCart = (cantidad , producto) =>{
+  const AddToCart = (quantity , product) =>{
             
-        let item = {producto,cantidad};
+        let item = {product,quantity};
         let auxCart= [];
 
          
-            if(IsInCart(producto.id)){
-               item = cartList.find(e => e.producto.id === producto.id);
-               producto.cantidad += cantidad;
+            if(IsInCart(product.id)){
+               item = cartList.find(e => e.product.id === product.id);
+               product.quantity += quantity;
                auxCart = [...cartList];
             }else{
                auxCart = [item, ...cartList];
@@ -58,25 +58,25 @@ const AddToLike = ( producto) =>{
   
 
   const DelItem =(id) => {
-    const items = cartList.filter((producto) => producto.id == id);
+    const items = cartList.filter((product) => product.id == id);
     return setCartList(items);
   }
 
   const IconCart = () => {
-    return cartList.reduce((acum,i) => acum + i.cantidad ,0)
+    return cartList.reduce((acum,i) => acum + i.quantity ,0)
   }
 
   const PriceTotal = () => {
-    return cartList.reduce((acum,i)=> acum + i.cantidad * i.producto.precio,0)
+    return cartList.reduce((acum,i)=> acum + i.quantity * i.product.price,0)
   }
 
  const IsInLike = (id) => {
-  return like&&like.some((i)=> i.producto.id === id)
+  return like&&like.some((i)=> i.product.id === id)
  }
 
 
   const IsInCart = (id) =>{
-    return cartList&&cartList.some((i)=> i.producto.id  === id)
+    return cartList&&cartList.some((i)=> i.product.id  === id)
   }
 
   const EmptyCart = () =>{

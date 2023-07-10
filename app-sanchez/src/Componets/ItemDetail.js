@@ -8,16 +8,16 @@ import '../Componets/css/StyleItemDetail.css'
 import styled from 'styled-components'
 // import ItemLike from './ItemLike'
 
-const ItemDetail = ({producto}) => {
+const ItemDetail = ({product}) => {
    
-   const[cantidad , setCantidad] = useState();
+   const[quantity , setQuantity] = useState();
    // const [goTolike , setGoToLike] = useState();
    const {AddToCart , AddToLike} = useContext(CartContext);
   
 
-  const onAdd = (cantidad) =>{
-     setCantidad(cantidad , producto ) ;
-     AddToCart(cantidad , producto);
+  const onAdd = (quantity) =>{
+     setQuantity(quantity , product ) ;
+     AddToCart(quantity , product);
   }
 
 
@@ -35,21 +35,27 @@ const ItemDetail = ({producto}) => {
              {/* <ItemLike onLike={onLike}>
             </ItemLike> */}
                <div className='big-img'>
-                  <img src={producto.img}/>
+                  <img src={product.img}/>
                </div>
                <div className='box'>
                   <div className='row'>
-                     <h2>{producto.nombre}</h2>
-                     <span>${producto.precio}</span>
+                     <h2>{product.name}</h2>
+                     <span>${product.price}</span>
                   </div>
-                  <p className='description'>{producto.descripcion}</p>
+                  <p className='description'>{product.description}</p>
                   
                   <div className='col'>
                       {
-                       cantidad ?
+                       quantity ?
+                       <div>
                        <Link to="/Cart" >
-                       <button className='btnCart2'>Ir al Cart</button>
-                      </Link>
+                       <button className='btnCart2'>Go to Cart</button>
+                       </Link>
+                       <Link to="/products" >
+                       <button className='btnCart2'>Go to store</button>
+                       </Link>
+                       </div>
+                       
                        :
                        <ItemCount initial={1} stock={20} onAdd={onAdd} />  
                    }                 

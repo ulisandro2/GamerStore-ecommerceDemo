@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
 import {TbArrowsRight , TbArrowsLeft} from 'react-icons/tb'
+import {BsCart} from 'react-icons/bs'
 import { Link } from 'react-router-dom';
 import './css/StyleNavbar.css'
 import styled from 'styled-components';
-// import {  UseCartContext } from './CartContext';
+import {  UseCartContext } from './CartContext';
 
 const NavBar = () => {
-  //  const {cartList,IconCart} = UseCartContext()
+   const {cartList,IconCart} = UseCartContext()
    
  const [state , setState] = useState(false)
   
  const [bar , setBar] = useState()
+
+
 
 
   
@@ -26,9 +29,9 @@ const NavBar = () => {
           </div>
           <ul className='navLinks'  > 
         <Link style={{textDecoration:'none'}} to='/'><li className='link'>Home</li></Link> 
-        <Link style={{textDecoration:'none'}} to='/productos'><li className='link'>Products</li></Link>    
-        <Link style={{textDecoration:'none'}} to='/'><li className='link'>About</li></Link>    
-        <Link style={{textDecoration:'none'}} to='/cart'><li className='link-cart'>Cart</li></Link>
+        <Link style={{textDecoration:'none'}} to='/products'><li className='link'>Products</li></Link>    
+      <a href='#about' className='about'> <li className='link'>About</li></a> 
+        <Link style={{textDecoration:'none'}} to='/cart'><li className='link-cart'><span><BsCart/>{IconCart()}</span></li></Link>
            
            </ul>
          </nav>
@@ -78,6 +81,12 @@ const Container= styled.div`
     color: white;
     padding: 0.7rem 1rem;
     white-space: nowrap;
+    text-decoration: none;
+}
+
+.about{
+    text-decoration: none;
+    list-style: none;
 }
 
 .link:hover{
@@ -95,6 +104,11 @@ const Container= styled.div`
 .menu-icon{
     display: none;
     
+}
+
+.link-cart span{
+    font-size: 1.6rem;
+    color: #7f37c9;
 }
 
 

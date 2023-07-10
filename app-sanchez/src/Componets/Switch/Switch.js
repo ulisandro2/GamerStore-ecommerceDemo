@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { BsSun, BsMoon } from 'react-icons/bs';
+import { BsFillSunFill, BsFillMoonFill } from 'react-icons/bs';
 
 import {SwitchContainer,SwitchWrapper,SwitchBGC,ButtonSwitch,} from './Switch.elements'
+import styled from 'styled-components';
 
 
 const Switch = (props) => {
@@ -23,11 +24,12 @@ const Switch = (props) => {
   }
 
 
-  let icono = props.theme === 'light' ? <BsSun/> : <BsMoon/>;
-  let leyenda = props.theme === 'light' ? <h1 className='light'>Modo claro</h1> : <h1 className='dark'>Modo oscuro</h1>;
+  let icono = props.theme === 'light' ?  <BsFillMoonFill/>:<span className='sun'> <BsFillSunFill/></span>;
+  // let leyenda = props.theme === 'light' ? <h1 className='light'>Modo claro</h1> : <h1 className='dark'>Modo oscuro</h1>;
   
   return (
     <>
+    <Container>
         <SwitchContainer>
        
             <SwitchWrapper>
@@ -37,11 +39,19 @@ const Switch = (props) => {
              <ButtonSwitch  onClick={() => changesMode()} position={position}>{icono}</ButtonSwitch>
             
             </SwitchBGC>
-            {leyenda}
+            {/* {leyenda} */}
             </SwitchWrapper>
         </SwitchContainer>
+        </Container>
     </>
   )
 }
+
+const Container=styled.div`
+.sun{
+  color: white;
+}
+
+`
 
 export default Switch

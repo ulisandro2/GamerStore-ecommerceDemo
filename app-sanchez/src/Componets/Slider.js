@@ -5,10 +5,11 @@ import './css/StyleSlider.css'
 import { Link } from 'react-router-dom'
 import Cards from './Cards';
 import { MDBAccordion, MDBAccordionItem } from 'mdb-react-ui-kit';
-import {BsMouse3Fill , BsMemory,BsCpuFill,BsGpuCard,BsMotherboard,BsPcDisplayHorizontal} from 'react-icons/bs'
-import {CiFloppyDisk} from 'react-icons/ci'
-import {GiGameConsole,GiPowerGenerator} from 'react-icons/gi'
-import {FiMonitor} from 'react-icons/fi'
+import {BsMouse3Fill , BsMemory,BsCpuFill,BsGpuCard,BsMotherboard,BsDisplay,BsFillKeyboardFill} from 'react-icons/bs'
+import {MdStorage} from 'react-icons/md'
+import {BiHeadphone} from 'react-icons/bi'
+import {GiConsoleController} from 'react-icons/gi'
+
 
 
 
@@ -34,7 +35,7 @@ const Slider = () => {
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active">
-          <Link to='/productos'>   <img src={portada} id='fondo' className="d-block w-100" alt="..." /></Link>   
+          <Link to='/products'>   <img src={portada} id='fondo' className="d-block w-100" alt="..." /></Link>   
           </div>
           <div className="carousel-item">
             <img src={banner} className="d-block w-100" alt="..." />
@@ -56,72 +57,74 @@ const Slider = () => {
     </div>
 
 
-      <h1 className='text-card'> Las mejores marcas</h1>
+      <h1 className='text-card'> The best brands </h1>
                      
 
                      <Cards/>
-
+  <br/>
+  <br/>
+  <br/>
 
           <section className='categories'>
             <div className='cont'>
-              <h2>Que estas buscando?</h2>
+              <h2 className='title-categories'>What are you looking for?</h2>
               <div className='cats'>
                 <div className='colum'>
-                 <Link style={{textDecoration:'none', listStyle:"none"}} to='/productos'>
+                 <Link style={{textDecoration:'none', listStyle:"none"}} to='/products/category/mouses'>
                     <div className='cat'>
                       <div className='svg-icon'>
                           <span> <BsMouse3Fill/></span> 
                       </div>
-                      <div className='svg-text'>Perifericos</div>
+                      <div className='svg-text'>Mouses</div>
                     </div>
                   </Link>
-                  <Link style={{textDecoration:'none', listStyle:"none"}} to='/productos'>
+                  <Link style={{textDecoration:'none', listStyle:"none"}} to='/products/category/processors'>
                     <div className='cat'>
                       <div className='svg-icon'>
                          <BsCpuFill/>
                       </div>
-                      <div className='svg-text'>Procesadores</div>
+                      <div className='svg-text'>Processors</div>
                     </div>
                   </Link>   
                </div>
                <div className='colum'>
-                 <Link style={{textDecoration:'none', listStyle:"none"}} to='/productos'>
+                 <Link style={{textDecoration:'none', listStyle:"none"}} to='/products/category/storage'>
                     <div className='cat'>
                       <div className='svg-icon'>
-                         <CiFloppyDisk/>
+                         <MdStorage/>
                       </div>
-                      <div className='svg-text'>Almacenamiento</div>
+                      <div className='svg-text'>Storage</div>
                     </div>
                   </Link>
-                  <Link style={{textDecoration:'none', listStyle:"none"}} to='/productos'>
+                  <Link style={{textDecoration:'none', listStyle:"none"}} to='/products/category/ram'>
                     <div className='cat'>
                       <div className='svg-icon'>
                       <BsMemory/>
                       </div>
-                      <div className='svg-text'>Memoria Ram</div>
+                      <div className='svg-text'>Memory Ram</div>
                     </div>
                   </Link>   
                </div>
                <div className='colum'>
-                 <Link style={{textDecoration:'none', listStyle:"none"}} to='/productos'>
+                 <Link style={{textDecoration:'none', listStyle:"none"}} to='/products/video boards'>
                     <div className='cat'>
                       <div className='svg-icon'>
                          <BsGpuCard/>
                       </div>
-                      <div className='svg-text'>Placas De video</div>
+                      <div className='svg-text'>Video Boards</div>
                     </div>
                   </Link>
-                  <Link style={{textDecoration:'none', listStyle:"none"}} to='/productos'>
+                  <Link style={{textDecoration:'none', listStyle:"none"}} to='/products/category/console'>
                     <div className='cat'>
                       <div className='svg-icon'>
-                         <GiGameConsole/>
+                         <GiConsoleController/>
                       </div>
-                      <div className='svg-text'>Consolas</div>
+                      <div className='svg-text'>Consoles</div>
                     </div>
                   </Link>   
                </div>
                <div className='colum'>
-                 <Link style={{textDecoration:'none', listStyle:"none"}} to='/productos'>
+                 <Link style={{textDecoration:'none', listStyle:"none"}} to='/products/category/motherboards'>
                     <div className='cat'>
                       <div className='svg-icon'>
                          <BsMotherboard/>
@@ -129,30 +132,30 @@ const Slider = () => {
                       <div className='svg-text'>Motherboards</div>
                     </div>
                   </Link>
-                  <Link style={{textDecoration:'none', listStyle:"none"}} to='/productos'>
+                  <Link style={{textDecoration:'none', listStyle:"none"}} to='/products/category/keyboards'>
                     <div className='cat'>
                       <div className='svg-icon'>
-                         <FiMonitor/>
+                         <BsFillKeyboardFill/>
                       </div>
-                      <div className='svg-text'>Monitores</div>
+                      <div className='svg-text'>Keyboards</div>
                     </div>
                   </Link>   
                </div>
                <div className='colum'>
-                 <Link style={{textDecoration:'none', listStyle:"none"}} to='/productos'>
+                 <Link style={{textDecoration:'none', listStyle:"none"}} to='/products/category/headphones'>
                     <div className='cat'>
                       <div className='svg-icon'>
-                         <GiPowerGenerator/>
+                        <BiHeadphone/>
                       </div>
-                      <div className='svg-text'>Fuentes</div>
+                      <div className='svg-text'>Headphones</div>
                     </div>
                   </Link>
-                  <Link style={{textDecoration:'none', listStyle:"none"}} to='/productos'>
+                  <Link style={{textDecoration:'none', listStyle:"none"}} to='/products'>
                     <div className='cat'>
                       <div className='svg-icon'>
-                         <BsPcDisplayHorizontal/>
+                         <BsDisplay/>
                       </div>
-                      <div className='svg-text'>Nootebooks</div>
+                      <div className='svg-text'>Displays</div>
                     </div>
                   </Link>   
                </div>
@@ -161,47 +164,43 @@ const Slider = () => {
             </div>
           </section>
 
-
+ 
 
           
-          <div className='text-about'>
+          <div id='about' className='text-about'>
               <h1 className='titleAbout'>About</h1>
-              <p className='text-p'>Nuestra empresa fue fundada en el año 20XX con el objetivo de ofrecer a los amantes de los videojuegos los mejores productos y servicios del mercado. Desde el principio, nos enfocamos en ofrecer hardware de última generación y periféricos de alta calidad para mejorar la experiencia de juego de nuestros clientes.
+              <p className='text-p'>Our company was founded in 2020 with the goal of offering video game lovers the best products and services in the market. From the beginning, we focused on offering state-of-the-art hardware and high quality peripherals to enhance the gaming experience of our customers.
 
-En el año 20YY abrimos nuestro primer local en Argentina y rápidamente nos convertimos en un referente en el mercado local gracias a nuestra amplia selección de productos y nuestro compromiso con la satisfacción del cliente. Nuestros clientes valoraban nuestra atención personalizada y nuestra capacidad para ofrecerles las últimas novedades en el mundo gamer.
+In 2021 we opened our first store in Argentina and quickly became a reference in the local market thanks to our wide selection of products and our commitment to customer satisfaction. Our customers valued our personalized attention and our ability to offer them the latest news in the gamer world.
 
-Con el tiempo, fuimos expandiendo nuestra presencia en otros países de la región y nuestra marca se convirtió en sinónimo de calidad y excelencia. Nuestros productos más populares incluyen [nombre del producto], [nombre del producto] y [nombre del producto], que han evolucionado a lo largo del tiempo para adaptarse a las necesidades cambiantes de nuestros clientes.
+Over time, we expanded our presence in other countries in the region and our brand became synonymous with quality and excellence. Our most popular products include processors, keyboards and video cards, which have evolved over time to adapt to the changing needs of our customers.
 
-En el año 20ZZ recibimos el premio [nombre del premio] por nuestra excelencia en el servicio al cliente y nuestra capacidad para ofrecer productos innovadores y de alta calidad. Este reconocimiento nos llenó de orgullo y nos motivó a seguir trabajando duro para mantenernos a la vanguardia del mercado gamer.
+In 2023, we received the "Best Gamer Products Sales Website" award for our excellence in customer service and our ability to offer innovative and high quality products. This recognition filled us with pride and motivated us to continue working hard to stay at the forefront of the gamer market.
 
-Hoy en día, seguimos comprometidos con nuestra misión de ofrecer a nuestros clientes los mejores productos gamer del mercado. Seguimos expandiéndonos y mejorando cada día para brindar una experiencia única a todos aquellos que comparten nuestra pasión por los videojuegos.
+Today, we remain committed to our mission of providing our customers with the best gamer products on the market. We continue to expand and improve every day to provide a unique experience to all those who share our passion for video games.
               </p>
-              <h2 className='title2'>Preguntas Frecuentes</h2>
-              <MDBAccordion flush initialActive={1}>
-      <MDBAccordionItem collapseId={1} headerTitle='Que pasa si me llega un producto dañado?'>
-       Si un producto le llego golpeado, dañado o defectuoso no se preocupe!! Todos nuestros productos tienen garantia de 2 años , en caso de tener un producto defectuoso 
-       simplemente contacte con el siguiete mail(GamerStoreContact@gmail.com) e informe el producto y la informacion , y un agente nuestro lo estara contactando con usted para resolver su problema.
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <h2 className='title2'>Frequent Questions </h2>
+              <MDBAccordion borderless  initialActive={1}>
+      <MDBAccordionItem  collapseId={1} headerTitle='What happens if I receive a damaged product?'>
+      If a product arrived to you damaged or defective, do not worry! All our products are guaranteed for 2 years, in case you have a defective product, simply contact us at the following email 
+       simply contact the following email 'GStoreContact@gmail.com' and inform the product and information, and one of our agent will be contacting you to solve your problem.
       </MDBAccordionItem>
-      <MDBAccordionItem collapseId={2} headerTitle='Accordion Item #2'>
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-        moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-        Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-        shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-        proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-        aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      <MDBAccordionItem collapseId={2} headerTitle='What are the payment methods?'>
+      From any of our stores we accept cash, market payment, bank transfer, debit and credit and even cryptocurrencies. But if you buy on our website, we accept market payment as debit and credit. 
+      If you have any doubt about how to pay do not hesitate to talk to support.
       </MDBAccordionItem>
-      <MDBAccordionItem collapseId={3} headerTitle='Accordion Item #3'>
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf
-        moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.
-        Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-        shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea
-        proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim
-        aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      <MDBAccordionItem collapseId={3} headerTitle='How do I manage the shipment of my product?'>
+      Once you place your order with the selected products, after payment, you will be sent an email with the steps to follow, where you will be asked for your zip code to calculate the shipping cost. We currently ship all over the country through Oca and Andreani. Please note that, to calculate the shipping cost, we take into consideration both the dimensions and weight of the package and the distance from the delivery location.
       </MDBAccordionItem>
     </MDBAccordion>
          </div>
 
-     <h1 className='titleSlider'>Todas las marcas </h1>
+     <h1 className='titleSlider'>Sponsors </h1>
     
 
 

@@ -2,14 +2,14 @@ import React from 'react'
 import { CartContext, UseCartContext } from './CartContext'
 import '../Componets/css/StyleCart.css'
 import styled from 'styled-components'
-import axios from 'axios'
 
 
 
 
 
 
-const CartItem = ({producto, cantidad}) => {
+
+const CartItem = ({product, quantity}) => {
    
   const {DelItem} = UseCartContext(CartContext)
   
@@ -21,14 +21,14 @@ const CartItem = ({producto, cantidad}) => {
   return (
     <Container>
             <div className='cartItem'>
-              <img src={producto.img}/>
+              <img src={product.img}/>
               <div className='description'>
                    <p className='product-name'>
-                    <b>{producto.name}</b>
+                    <b>{product.name}</b>
                    </p>
-                   <p className='price'>${producto.precio}</p>
+                   <p className='price'>${product.price}</p>
                    <div className='count'>
-                    <p className='count-title'>Productos selecionados: {cantidad}</p>
+                    <p className='count-title'>Productos selecionados: {quantity}</p>
                    </div>
                </div>
             </div>

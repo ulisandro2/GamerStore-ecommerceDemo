@@ -20,13 +20,13 @@ const AgregarProducto = ()=>{
 return(
     <>
        <Container>
-       <h2 className="tituloContador">Total productos = {count}</h2>
+       <h2 className="tituloContador">Total items = {count}</h2>
          <div className="contador">
             
             <button className="btnCountMas" onClick={Agregar}>+</button>
             <button className="btnCountMenos" onClick={Restar}>-</button>
             </div>
-            <button className="btnCount" onClick={AgregarProducto}>Agregar</button>
+            <button className="btnCount" onClick={AgregarProducto}>Add</button>
             
        </Container>
     

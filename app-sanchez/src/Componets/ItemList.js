@@ -3,7 +3,7 @@ import Item from "./Item"
 import styled from "styled-components"
 
 
-const ItemList = ({producto }) => {
+const ItemList = ({product }) => {
 
  
 
@@ -12,9 +12,9 @@ const ItemList = ({producto }) => {
         
          
              <Container >
-               {producto.map((producto)=> (
+               {product.map((product)=> (
              
-                <Item key={producto.id} producto={producto}/> 
+                <Item key={product.id} product={product}/> 
               
               )
             )}

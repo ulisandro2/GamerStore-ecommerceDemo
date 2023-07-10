@@ -3,7 +3,7 @@
 .text-card{
     margin-top: 40px;
     font-size: 2rem;
-    font-weight: 700;
+    
     text-align: center;
     color: black;
 }
@@ -17,12 +17,19 @@
     color: black;
 }
 
+.title-categories{
+    color: black;
+}
+
 .text-p{
     text-align: center;
     font-weight: 600;
     font-size: 1.2rem;
 }
 
+.title2{
+    color: black;
+}
 
 .categories{
     display: block;

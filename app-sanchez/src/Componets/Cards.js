@@ -12,13 +12,13 @@ class Cards extends Component{
                  <div className='container-fluid d-flex justify-content-center'>
                     <div className='row'>
                         <div className='col-md-4'>
-                            <CardLogos imgsrc={Amd} title='AMD' description='Advanced Micro Devices, Inc. es una compañía estadounidense de semiconductores con sede en Santa Clara, California, que desarrolla procesadores de computación y productos tecnológicos similares de consumo.' />
+                            <CardLogos imgsrc={Amd} title='AMD' description='Advanced Micro Devices, Inc. is an American semiconductor company based in Santa Clara, California, that develops computer processors and similar consumer technology products.' />
                         </div>
                         <div className='col-md-4'>
-                        <CardLogos  imgsrc={Intel} title='INTEL' description='Intel Corporation es el mayor fabricante de circuitos integrados del mundo según su cifra de negocio anual.​ La compañía estadounidense es la creadora de la serie de procesadores x86, los procesadores más comúnmente encontrados en la mayoría de las computadoras personales. ' />
+                        <CardLogos  imgsrc={Intel} title='INTEL' description='Intel Corporation is the worlds largest manufacturer of integrated circuits by annual turnover. The U.S. company is the creator of the x86 series of processors, the processors most commonly found in most personal computers. ' />
                         </div>
                         <div className='col-md-4'>
-                        <CardLogos  imgsrc={Razer} title='RAZER' description='Razer Inc., es una compañía de fabricación de hardware para videojuegos establecida en 2005 por el empresario de Singapur Min-Liang Tan y Robert Krakoff, después de obtener una gran inversión de Li Ka-shing y de Temasek Holdings de Singapur.​'  />
+                        <CardLogos  imgsrc={Razer} title='RAZER' description='Razer Inc. is a video game hardware manufacturing company established in 2005 by Singaporean entrepreneur Min-Liang Tan and Robert Krakoff, after securing a large investment from Li Ka-shing and Temasek Holdings of Singapore.​'  />
                         </div>
                         
                     </div>

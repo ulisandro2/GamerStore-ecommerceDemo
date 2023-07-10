@@ -8,7 +8,7 @@ import { doc, getDoc, getFirestore } from 'firebase/firestore'
 
 
 const ItemDetailContainer = () => {
-    const [producto , setProductos] = useState([]);
+    const [product , setProducts] = useState([]);
     
     
      
@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
         const db = getFirestore()
         const queryItem = doc(db, 'items', id)
         getDoc(queryItem) 
-        .then(resp => setProductos({ id: resp.id, ...resp.data()} ))
+        .then(resp => setProducts({ id: resp.id, ...resp.data()} ))
         .catch(err => console.log(err))
         .finally();
        },[id])
@@ -35,7 +35,7 @@ const ItemDetailContainer = () => {
      
      
      
-     <ItemDetail producto={producto} />
+     <ItemDetail product={product} />
 
     </>
       )

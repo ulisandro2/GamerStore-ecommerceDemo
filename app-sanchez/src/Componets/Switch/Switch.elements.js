@@ -26,25 +26,29 @@ export const SwitchWrapper = styled.div`
 export const SwitchBGC = styled.div`
           width:90px;
           position:relative;
-          height:40px;
+          height:53px;
           border-radius:30px;
-          background-color:${({theme})=> theme.toogle} ;
+          /* background-color:${({theme})=> theme.toogle} ; */
           transition:0.4s all ease-in;
           
 `;
 
 export const ButtonSwitch = styled.button`
-          width:37px;
+         
           cursor:pointer;
-          left:${({position})=> (position ? '50px' : '5px')};
+          /* left:${({position})=> (position ? '50px' : '5px')}; */
+          /* background-color:${({theme})=> theme.toogle} ; */
           border:none;
           border-radius:50%;
-          background-color:#fff;
+          background: none;
           position:absolute;
-          height:37px;
+          display: flex;
+          font-size: 1.4rem;
           border-radius:30px;
-          outline: none
+          outline: none;
           transition: 0.4s all ease-in;
+          bottom: 70px;
+          left: 40px;
 
 `;
 
