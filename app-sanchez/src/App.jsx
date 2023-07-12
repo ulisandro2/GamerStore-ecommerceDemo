@@ -37,7 +37,7 @@ function App() {
       <CartContextProvider>
      
           <BrowserRouter >
-          <p>{!data ? 'Loading...': data}</p>
+          {/* <p>{!data ? 'Loading...': data}</p> */}
              <NavBar />
              <br/>
              <br/>
