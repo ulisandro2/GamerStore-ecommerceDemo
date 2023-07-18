@@ -63,7 +63,7 @@ const Cart = ({producto,cantidad}) => {
     footer:'In case you make a mistake with the payment, send me an email to recover your money sanchezulises952@gmail.com'
   }).then((res)=>{
     if(res.isConfirmed){
-      axios.post('http://localhost:3001/payment', producto).then((res)=> window.location.href = res.data.response.body.init_point)
+      axios.post('http://localhost:3000/payment', producto).then((res)=> window.location.href = res.data.response.body.init_point)
     }else{
       Swal.fire({
         icon:'info',

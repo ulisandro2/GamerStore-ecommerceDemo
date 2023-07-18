@@ -3,15 +3,11 @@ const morgan = require('morgan');
 const mercadopago = require('mercadopago');
 require('dotenv').config()
 const admin = require('firebase-admin')
-const port = process.env.PORT || 3001
+const PORT = process.env.PORT || 3000
 const path = require('path')
 const mainRoutes = require('./routes/mainRoutes')
 
-
-
-
 // server.set('view engine', 'ejs') 
-
 const server = express()
 
 server.use(express.json())
@@ -27,6 +23,18 @@ server.use((_req, res,next)=>{
     next()
 })
 
+
+server.use(express.static(path.resolve(__dirname,'./app-sanchez/build')))
+
+server.get("/api" , (req,res)=>{
+    res.json({message:'Hola react'})
+})
+
+server.get('*',(req,res)=>{
+     res.sendFile(path.resolve(__dirname, 'app-sanchez','build',  'index.html'))
+   
+})
+
 let serviceAccount = require('./gamerstore-ecommerce-firebase-adminsdk-c55a1-eb6035a919.json')
 
 admin.initializeApp({
@@ -38,15 +46,7 @@ const db = admin.firestore()
 
 // server.use('/', mainRoutes)
 
-server.use(express.static(path.resolve(__dirname,'../app-sanchez/build')))
 
-server.get("/api" , (req,res)=>{
-    res.json({message:'Hola react'})
-})
-
-server.get('*',(req,res)=>{
-    res.sendFile(path.resolve(__dirname, '../app-sanchez/build', 'index.html'))
-})
 
 mercadopago.configure({access_token:process.env.MERCADOPAGO_KEY})
 server.post('/payment' , async (req,res)=>{
@@ -118,7 +118,7 @@ server.post('/payment' , async (req,res)=>{
     
 })
 
-server.listen(port, ()=>{
-    console.log('listening', port)
+server.listen(PORT,  ()=>{
+    console.log('listening', PORT)
     
 })
