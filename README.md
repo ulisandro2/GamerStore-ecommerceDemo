@@ -29,7 +29,7 @@ Welcome to GamerStore, a React E-commerce Demo, and my final project for the Cod
 
 ## Try It Out
 
-Explore the GamerStore E-commerce Demo by visiting [https://gamerstoreapp.netlify.app/](#).
+Explore the GamerStore E-commerce Demo by visiting [gamerstoreapp](https://gamerstoreapp.netlify.app/).
 
 ## Technologies Used
 
