@@ -25,7 +25,7 @@ Welcome to GamerStore, a React E-commerce Demo, and my final project for the Cod
 
 ## Screenshots
 
- <img width="500px" src="https://i.ibb.co/89qq1CX/gamerstore.png" alt="Living Room">
+ <img width="500px" src="https://i.ibb.co/89qq1CX/gamerstore.png" alt="">
 
 ## Try It Out
 
